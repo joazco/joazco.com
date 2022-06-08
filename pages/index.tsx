@@ -1,0 +1,30 @@
+import { Page, ProjectsComponent } from "../components";
+import { fetchProjects } from "../components/Page";
+import { Project } from "../types";
+
+type HomeProps = {
+  projects: Project[];
+};
+
+function Home(props: HomeProps) {
+  const { projects } = props;
+  return (
+    <Page>
+      <h1>Joazco</h1>
+      <ProjectsComponent projects={projects} />
+    </Page>
+  );
+}
+
+// This function gets called at build time on server-side.
+// It won't be called on client-side, so you can even do
+// direct database queries.
+export async function getStaticProps() {
+  const projects = await fetchProjects();
+  return {
+    props: {
+      projects,
+    },
+  };
+}
+export default Home;
