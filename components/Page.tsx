@@ -3,7 +3,6 @@ import { getFirestore, collection, query, getDocs } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
 
 import Head from "./Head";
-import "../index.scss"
 
 const firebaseConfig = {
   apiKey: process.env.API_KEY,

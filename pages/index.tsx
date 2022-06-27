@@ -1,8 +1,6 @@
 import { Page, ProjectsComponent } from "../components";
 import { fetchProjects } from "../components/Page";
 import { Project } from "../types";
-import "../index.scss";
-
 
 type HomeProps = {
   projects: Project[];
