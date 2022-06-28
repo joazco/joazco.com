@@ -4,6 +4,10 @@ footer {
   padding: 20px;
   display: flex;
   justify-content: space-around;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
   a {
     color: var(--color-light);
     text-decoration: none;
