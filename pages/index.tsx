@@ -19,8 +19,8 @@ function Home(props: HomeProps) {
     <Page>
       <Menu />
       <Bloc1 />
-      <ProjectsComponent projects={projects} />
       <Bloc2 />
+      <ProjectsComponent projects={projects} />
       <Footer />
     </Page>
   );
