@@ -64,7 +64,6 @@
 }
 
 body {
-  background-color: rgb(255, 14, 54) !important;
   margin: 0;
   padding: 0;
   border: 0;
@@ -75,6 +74,7 @@ body {
   display: flex;
   flex-direction: column;
   flex: 1;
+  position: relative;
 
   li {
     transition: all 0.35s ease;
@@ -113,8 +113,8 @@ header {
 }
 main {
   height: 100%;
-  margin-bottom: 20px;
 }
+
 h1 {
   font-size: 2rem;
 }

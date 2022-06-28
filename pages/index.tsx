@@ -1,4 +1,11 @@
-import { Page, ProjectsComponent } from "../components";
+import {
+  Page,
+  ProjectsComponent,
+  Menu,
+  Bloc1,
+  Bloc2,
+  Footer,
+} from "../components";
 import { fetchProjects } from "../components/Page";
 import { Project } from "../types";
 
@@ -10,8 +17,11 @@ function Home(props: HomeProps) {
   const { projects } = props;
   return (
     <Page>
-      <h1>Joazco</h1>
+      <Menu />
+      <Bloc1 />
+      <Bloc2 />
       <ProjectsComponent projects={projects} />
+      <Footer />
     </Page>
   );
 }
