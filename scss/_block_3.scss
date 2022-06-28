@@ -2,6 +2,10 @@
   background-color: var(--color-primary);
   color: var(--color-light);
   padding: 10px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
   article {
     overflow-x: hidden;
   }
@@ -10,8 +14,8 @@
   }
   .joazco--block-3-content {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
+    width: 100%;
     > div {
       flex-basis: 50%;
     }
