@@ -34,8 +34,10 @@ const ProjectsComponent = ({ projects }: ProjectsComponentProps) => {
                 <p>{project.content}</p>
                 <div className="joazco--block-3-content-link-content">
                   <a href={project.link}>
-                    {/* attribut alt ? */}
-                    <img src={project.image} />
+                    <img
+                      src={project.image}
+                      alt={`L'image du projet ${project.title}`}
+                    />
                     <div>
                       <span>
                         Lien vers {project.link.replace(/(^\w+:|^)\/\//, "")}
