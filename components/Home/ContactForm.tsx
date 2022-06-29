@@ -1,40 +1,19 @@
 import React from "react";
-import { useState, FormEvent } from "react";
+import { FormType } from "../../types";
+import { useContactForm } from "../../hooks";
 
 //? Séparer partie focntionnel
 //? Vérification des inputs en backend
 //? un seul formulaire donc bloquer après handleSubmit
-//? Type Globaux ?
-//! l.25 pblm type event
+//? Type Globaux 
 
-export type formInputType = {
-  emailInput: string;
-  subjectInput: string;
-  informationInput: string;
+
+export type ContactFormProps = {
+  onSubmit: (Form: FormType) => void;
 };
 
-const Contact = () => {
-  const [formData, setFormData] = useState<formInputType>({
-    emailInput: "",
-    subjectInput: "Projet web",
-    informationInput: "",
-  });
-  console.log(
-    "🚀 ~ file: Contact.tsx ~ line 16 ~ Contact ~ formData",
-    formData
-  );
-
-  const handleChange = (input: string) => (event: any) => {
-    setFormData((formData) => ({ ...formData, [input]: event.target.value }));
-  };
-
-  //   const handleSubmit = (e: FormEvent<HTMLButtonElement>): void => {
-  //     e.preventDefault();
-  //     if (formData) {
-  //     }
-  //     onSubmit(formData);
-  //     setFormData("");
-  //   };
+const ContactForm = (props: ContactFormProps) => {
+  const { handleChange, formData } = useContactForm(props);
 
   return (
     <section className="joazco--block-4" id="contact">
@@ -85,4 +64,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactForm;
