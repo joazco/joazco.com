@@ -6,8 +6,3 @@ export type Project = {
   order: number;
 };
 
-export type FormType = {
-  emailInput: string;
-  subjectInput: string;
-  informationInput: string;
-}

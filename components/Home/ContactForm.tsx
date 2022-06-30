@@ -1,37 +1,31 @@
-import React from "react";
-import { FormType } from "../../types";
+import React, { FormEvent } from "react";
 import { useContactForm } from "../../hooks";
 
-//? Séparer partie focntionnel
-//? Vérification des inputs en backend
-//? un seul formulaire donc bloquer après handleSubmit
-//? Type Globaux
-
 export type ContactFormProps = {
-  onSubmit: (Form: FormType) => void;
+  handleSubmit: (e: FormEvent<HTMLButtonElement>) => void;
 };
 
 const ContactForm = (props: ContactFormProps) => {
   const {
     handleSubmit,
-    // handleChange,
     setEmailInput,
     emailInput,
     setSubjectInput,
     subjectInput,
     setInformationInput,
     informationInput,
+    blockForm,
   } = useContactForm(props);
 
   return (
     <section className="joazco--block-4" id="contact">
       <article>
         <h2>Nous contacter</h2>
-
-        <form id="formContact" >
+        <form id="formContact">
           <div className="form-field">
             <label>Email</label>
             <input
+              readOnly={blockForm}
               type="email"
               id="email-input"
               required
@@ -42,19 +36,19 @@ const ContactForm = (props: ContactFormProps) => {
           </div>
           <div className="form-field">
             <select
+              disabled={blockForm}
               id="reason-input"
               value={subjectInput}
               onChange={(e) => setSubjectInput(e.target.value)}
             >
-              <option value="Projet web" selected>
-                Projet web
-              </option>
+              <option value="Projet web">Projet web</option>
               <option value="Projet mobile">Projet mobile</option>
               <option value="autre">autre</option>
             </select>
           </div>
           <div className="form-field">
             <textarea
+              readOnly={blockForm}
               id="information-input"
               required
               value={informationInput}
@@ -62,7 +56,11 @@ const ContactForm = (props: ContactFormProps) => {
             ></textarea>
           </div>
           <div className="form-field">
-            <button type="submit" id="btn-submit" onClick={(e) => handleSubmit(e)}>
+            <button
+              type="submit"
+              id="btn-submit"
+              onClick={(e) => handleSubmit(e)}
+            >
               Envoyer <i className="far fa-paper-plane"></i>
             </button>
           </div>
