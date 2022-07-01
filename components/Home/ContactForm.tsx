@@ -15,6 +15,7 @@ const ContactForm = (props: ContactFormProps) => {
     setInformationInput,
     informationInput,
     blockForm,
+    showAlert,
   } = useContactForm(props);
 
   return (
@@ -22,6 +23,17 @@ const ContactForm = (props: ContactFormProps) => {
       <article>
         <h2>Nous contacter</h2>
         <form id="formContact">
+          {showAlert === true ? (
+            <div className="form-field alert">
+              <div>
+                <i className="fas fa-check"></i>
+              </div>
+              <p>
+                Votre message a bien été envoyé et reçu, vous aurez un retour
+                d'ici peu.
+              </p>
+            </div>
+          ) : null}
           <div className="form-field">
             <label>Email</label>
             <input

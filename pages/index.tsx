@@ -7,25 +7,22 @@ import {
   Footer,
   ContactForm
 } from "../components";
-import { useContactForm } from "../hooks";
 import { fetchProjects } from "../components/Page";
 import { Project } from "../types";
-import { FormEvent } from "react";
 
 type HomeProps = {
   projects: Project[];
-  handleSubmit: (e:FormEvent<HTMLButtonElement>) => void;
 };
 
 function Home(props: HomeProps) {
-  const { projects, handleSubmit } = props;
+  const { projects } = props;
   return (
     <Page>
       <Menu />
       <Bloc1 />
       <Bloc2 />
       <ProjectsComponent projects={projects} />
-      <ContactForm handleSubmit={handleSubmit} />
+      <ContactForm />
       <Footer />
     </Page>
   );
