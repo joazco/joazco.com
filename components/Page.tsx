@@ -11,6 +11,7 @@ const firebaseConfig = {
   appId: process.env.APP_ID,
 };
 const app = initializeApp(firebaseConfig);
+
 export const db = getFirestore(app);
 export const fetchProjects = async () => {
   const onfulfilled = await getDocs(query(collection(db, "projects")));

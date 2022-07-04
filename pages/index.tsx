@@ -5,7 +5,7 @@ import {
   Bloc1,
   Bloc2,
   Footer,
-  ContactForm
+  ContactForm,
 } from "../components";
 import { fetchProjects } from "../components/Page";
 import { Project } from "../types";
@@ -33,6 +33,7 @@ function Home(props: HomeProps) {
 // direct database queries.
 export async function getStaticProps() {
   const projects = await fetchProjects();
+
   return {
     props: {
       projects,
