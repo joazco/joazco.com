@@ -18,7 +18,7 @@ const Bloc2 = () => {
           les différentes plateformes à coûts réduits.
         </p>
       </div>
-      <div className="joazco--block-2-content" /* data-aos="zoom-in" */>
+      <div className="joazco--block-2-content" data-aos="zoom-in">
         <div>
           <h3>Créateur de sites web</h3>
           <p>
@@ -31,13 +31,13 @@ const Bloc2 = () => {
             concrétisent.
           </p>
         </div>
-        <div className="joazco--block-2-content-img" /* data-aos="zoom-in" */>
+        <div className="joazco--block-2-content-img" data-aos="zoom-in">
           <img
             src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/images%2Fbrowser.png?alt=media&token=024482f8-8dd4-4bcf-8444-509d35947005"
             alt="browser icon"
           />
         </div>
-        <div className="joazco--block-2-content-2" /* data-aos="zoom-in" */>
+        <div className="joazco--block-2-content-2" data-aos="zoom-in">
           <h3>Créateur d'application mobile</h3>
           <p>
             Donnez vie à vos projets mobile avec notre expertise.
@@ -49,7 +49,7 @@ const Bloc2 = () => {
         </div>
         <div
           className="joazco--block-2-content-2 joazco--block-2-content-img"
-          /* data-aos="zoom-in" */
+          data-aos="zoom-in"
         >
           <img
             src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/images%2Fmobile-app.png?alt=media&token=47f4bba9-e637-4fe8-a5e4-ccb1c98802ed"

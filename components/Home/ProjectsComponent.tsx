@@ -24,10 +24,11 @@ const ProjectsComponent = ({ projects }: ProjectsComponentProps) => {
       <article>
         <h2>Nos projets</h2>
         <div className="joazco--block-3-content">
-          {_projects.map((project) => (
+          {_projects.map((project, i) => (
             <div
               key={`project-${project.order}`}
               className="joazco--block-3-content-project"
+              data-aos={i % 2 ? "fade-left" : "fade-right"}
             >
               <div key={project.title}>
                 <h3>{project.title}</h3>
