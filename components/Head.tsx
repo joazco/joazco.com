@@ -1,6 +1,17 @@
 import HeadNext from "next/head";
+import { useEffect } from "react";
+import { useHeader } from "../scripts";
+import useScroll from "../scripts/useScroll";
 
 const Head = () => {
+  const initHeader = useHeader();
+  const initScroll = useScroll();
+
+  useEffect(() => {
+    initHeader();
+    initScroll();
+  }, []);
+
   return (
     <HeadNext>
       <title>Joazco</title>
@@ -60,6 +71,21 @@ const Head = () => {
       />
       <script src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/jquery-3.6.0.min.js?alt=media&token=4300d217-bc88-46f5-a036-0ce7328fab83"></script>
       <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      {/* <script src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/scripts%2Fcontact.js?alt=media&token=a6b0648d-c1cc-4cb3-b3fc-a372bbd60ad8"></script>
+      <script src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/scripts%2Fheader.js?alt=media&token=fd58509f-5e61-4d7b-8057-787e7ef9b7c9"></script>
+      <script src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/scripts%2Fscroll.js?alt=media&token=472fc365-9bbe-4619-8c4f-ca89e80bbd85"></script> */}
+      {/* <script src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/scripts%2Fscript.js?alt=media&token=3ef84ccf-286a-440a-9850-f00512d65489"></script> */}
+      {/* <script>
+        $(function (){" "}
+        {setTimeout(() => {
+          console.log("i'm here");
+          SCROLL.init();
+          HEADER.init();
+          CONTACT.init();
+          AOS.init();
+        }, 3000)}
+        );
+      </script> */}
     </HeadNext>
   );
 };
