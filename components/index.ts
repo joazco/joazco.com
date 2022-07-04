@@ -5,3 +5,4 @@ export { default as Menu } from "./Home/Menu";
 export { default as Bloc1 } from "./Home/Bloc1";
 export { default as Bloc2 } from "./Home/Bloc2";
 export { default as Footer } from "./Home/Footer";
+export { default as ContactForm } from "./Home/ContactForm";

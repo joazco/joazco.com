@@ -5,6 +5,7 @@ import {
   Bloc1,
   Bloc2,
   Footer,
+  ContactForm
 } from "../components";
 import { fetchProjects } from "../components/Page";
 import { Project } from "../types";
@@ -21,6 +22,7 @@ function Home(props: HomeProps) {
       <Bloc1 />
       <Bloc2 />
       <ProjectsComponent projects={projects} />
+      <ContactForm />
       <Footer />
     </Page>
   );
