@@ -1,11 +1,21 @@
 import { Button, TextField, Box } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import { Page } from "../components";
+import { useAdmin } from "../hooks";
 
 const Admin = () => {
   // if (!connected) {
   //     return <Page>Connexion</Page>
   // }
+
+  const {
+    setEmailInput,
+    setPasswordInput,
+    passwordInput,
+    emailInput,
+    signInWithEmailAndPassword,
+  } = useAdmin();
+
   return (
     <Page>
       <div className="admin">
@@ -20,18 +30,25 @@ const Admin = () => {
         >
           <TextField
             id="outlined-basic"
-            label="Login"
+            label="Email"
             variant="outlined"
             required
+            value={emailInput}
+            onChange={(e) => setEmailInput(e.target.value)}
           />
           <TextField
             id="outlined-basic"
             label="Password"
             variant="outlined"
             required
+            value={passwordInput}
+            onChange={(e) => setPasswordInput(e.target.value)}
           />
-          <Button variant="contained" /* endIcon={<SendIcon />} */>
-            ok
+          <Button
+            variant="contained"
+            /* endIcon={<SendIcon />} */ onClick={() => signInWithEmailAndPassword(emailInput, passwordInput)}
+          >
+            Log In
           </Button>
         </Box>
       </div>
