@@ -1,11 +1,7 @@
-import React, { FormEvent } from "react";
+import React from "react";
 import { useContactForm } from "../../hooks";
 
-export type ContactFormProps = {
-  handleSubmit: (e: FormEvent<HTMLButtonElement>) => void;
-};
-
-const ContactForm = (props: ContactFormProps) => {
+const ContactForm = () => {
   const {
     handleSubmit,
     setEmailInput,
@@ -16,15 +12,15 @@ const ContactForm = (props: ContactFormProps) => {
     informationInput,
     blockForm,
     showAlert,
-  } = useContactForm(props);
+  } = useContactForm();
 
   return (
     <section className="joazco--block-4" id="contact">
       <article>
         <h2>Nous contacter</h2>
         <form id="formContact">
-          {showAlert === true ? (
-            <div className="form-field alert">
+          {showAlert && (
+            <div className="form-field alert active">
               <div>
                 <i className="fas fa-check"></i>
               </div>
@@ -33,11 +29,11 @@ const ContactForm = (props: ContactFormProps) => {
                 d'ici peu.
               </p>
             </div>
-          ) : null}
+          )}
           <div className="form-field">
             <label>Email</label>
             <input
-              readOnly={blockForm}
+              disabled={blockForm}
               type="email"
               id="email-input"
               required
@@ -60,7 +56,7 @@ const ContactForm = (props: ContactFormProps) => {
           </div>
           <div className="form-field">
             <textarea
-              readOnly={blockForm}
+              disabled={blockForm}
               id="information-input"
               required
               value={informationInput}
