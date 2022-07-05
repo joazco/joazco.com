@@ -6,3 +6,6 @@ export { default as Bloc1 } from "./Home/Bloc1";
 export { default as Bloc2 } from "./Home/Bloc2";
 export { default as Footer } from "./Home/Footer";
 export { default as ContactForm } from "./Home/ContactForm";
+export { default as SigninForm } from "./Admin/SigninForm";
+export { default as NavBar } from "./Admin/NavBar";
+export { default as ProjectForm } from "./Admin/ProjectForm";

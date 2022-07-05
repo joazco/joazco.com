@@ -1,65 +1,75 @@
-import { useState, FormEvent } from "react";
+import { useState, useEffect } from "react";
 import {
-  getAuth,
   signInWithEmailAndPassword,
-  User,
   onAuthStateChanged,
+  signOut,
 } from "firebase/auth";
-import { auth } from "../../components/Page";
+import { collection, onSnapshot } from "firebase/firestore";
+import { auth, db, fetchProjects } from "../../components/Page";
+import { Project } from "../../types";
 
 const useAdmin = () => {
   const [emailInput, setEmailInput] = useState<string>("");
   const [passwordInput, setPasswordInput] = useState<string>("");
-  const [connected, setConnected] = useState<Boolean>(false);
+  const [connected, setConnected] = useState<boolean | undefined>();
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [showForm, setShowForm] = useState<boolean>(false);
 
-  // const login = e => {
-  //     e.preventDefault();
-  //     const auth = getAuth();
-  //     console.log("🚀 ~ file: index.tsx ~ line 13 ~ handleSubmit ~ auth ", auth )
-
-  // signInWithEmailAndPassword(auth, emailInput, passwordInput)
-  //   .then((userCredential) => {
-  //     const user = userCredential.user;
-  //   })
-  //   .catch((error) => {
-  //     const errorCode = error.code;
-  //     const errorMessage = error.message;
-  //   });
-  // }
-  const connectionWithEmailPassword = (
-    emailInput: string,
-    passwordInput: string
-  ) => {
-    signInWithEmailAndPassword(auth, emailInput, passwordInput).catch((err) => {
-    });
+  const logIn = (emailInput: string, passwordInput: string) => {
+    signInWithEmailAndPassword(auth, emailInput, passwordInput).catch(
+      (err) => {}
+    );
   };
 
-  // const checkAuth = () => {
-  //   onAuthStateChanged(auth, (u) => {
-  //     setUser(u);
-  //   });
-  // };
+  const logOut = () => {
+    signOut(auth);
+  };
 
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      // User is signed in, see docs for a list of available properties
-      // https://firebase.google.com/docs/reference/js/firebase.User
-      const uid = user.uid;
-      // ...
-    } else {
-      // User is signed out
-      // ...
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setConnected(true);
+      } else {
+        setConnected(false);
+      }
+    });
+  }, []);
+
+  useEffect(() => {
+    if (connected) {
+      onSnapshot(collection(db, "projects"), (snapshot) => {
+        const _projects: Project[] = [];
+        snapshot.docs.forEach((doc) => {
+          const data = doc.data() as Project;
+          _projects.push(data);
+        });
+        setProjects(
+          _projects.sort((a, b) => {
+            if (a.order > b.order) {
+              return 1;
+            }
+            if (b.order > a.order) {
+              return -1;
+            }
+
+            return 0;
+          })
+        );
+      });
     }
-  });
+  }, [connected]);
 
   return {
-    // user,
+    connected,
     emailInput,
-    setEmailInput,
     passwordInput,
+    projects,
+    showForm,
+    setEmailInput,
     setPasswordInput,
-    // signInWithEmailAndPassword,
-    connectionWithEmailPassword,
+    logIn,
+    logOut,
+    setShowForm,
   };
 };
 
