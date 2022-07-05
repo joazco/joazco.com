@@ -3,13 +3,14 @@ import {
   getAuth,
   signInWithEmailAndPassword,
   User,
-  createUserWithEmailAndPassword,
+  onAuthStateChanged,
 } from "firebase/auth";
+import { auth } from "../../components/Page";
 
 const useAdmin = () => {
-  const [user, setUser] = useState<User | null | undefined>(undefined);
   const [emailInput, setEmailInput] = useState<string>("");
   const [passwordInput, setPasswordInput] = useState<string>("");
+  const [connected, setConnected] = useState<Boolean>(false);
 
   // const login = e => {
   //     e.preventDefault();
@@ -29,13 +30,27 @@ const useAdmin = () => {
     emailInput: string,
     passwordInput: string
   ) => {
-    const auth = getAuth();
     signInWithEmailAndPassword(auth, emailInput, passwordInput).catch((err) => {
-      if (err.message.includes("auth/user-not-found")) {
-        createUserWithEmailAndPassword(auth, emailInput, passwordInput);
-      }
     });
   };
+
+  // const checkAuth = () => {
+  //   onAuthStateChanged(auth, (u) => {
+  //     setUser(u);
+  //   });
+  // };
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/firebase.User
+      const uid = user.uid;
+      // ...
+    } else {
+      // User is signed out
+      // ...
+    }
+  });
 
   return {
     // user,
