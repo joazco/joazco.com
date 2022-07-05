@@ -2,19 +2,37 @@ import { Button, TextField, Box } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import { Page } from "../components";
 import { useAdmin } from "../hooks";
+import { useState, FormEvent } from "react";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
+
 
 const Admin = () => {
   // if (!connected) {
   //     return <Page>Connexion</Page>
   // }
 
-  const {
-    setEmailInput,
-    setPasswordInput,
-    passwordInput,
-    emailInput,
-    signInWithEmailAndPassword,
-  } = useAdmin();
+  // const {
+  //   // setEmailInput,
+  //   // setPasswordInput,
+  //   // passwordInput,
+  //   // emailInput,
+  //   // signInWithEmailAndPassword,
+  //   connectionWithEmailPassword
+  // } = useAdmin();
+  // const [user, setUser] = useState<User | null | undefined>(undefined);
+  const [emailInput, setEmailInput] = useState<string>("");
+  const [passwordInput, setPasswordInput] = useState<string>("");
+
+  const connectionWithEmailPassword = (emailInput: string, passwordInput: string) => {
+  console.log("🚀 ~ file: admin.tsx ~ line 27 ~ connectionWithEmailPassword ~ passwordInput", passwordInput)
+  console.log("🚀 ~ file: admin.tsx ~ line 27 ~ connectionWithEmailPassword ~ emailInput", emailInput)
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, emailInput, passwordInput).catch((err) => {
+      if (err.message.includes("auth/user-not-found")) {
+        createUserWithEmailAndPassword(auth, emailInput, passwordInput);
+      }
+    });
+  };
 
   return (
     <Page>
@@ -46,7 +64,7 @@ const Admin = () => {
           />
           <Button
             variant="contained"
-            /* endIcon={<SendIcon />} */ onClick={() => signInWithEmailAndPassword(emailInput, passwordInput)}
+            /* endIcon={<SendIcon />} */ onClick={() => connectionWithEmailPassword(emailInput, passwordInput)}
           >
             Log In
           </Button>
