@@ -10,7 +10,7 @@ const firebaseConfig = {
   projectId: process.env.PROJECT_ID,
   appId: process.env.APP_ID,
 };
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
 
 export const db = getFirestore(app);
 export const fetchProjects = async () => {

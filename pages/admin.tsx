@@ -3,8 +3,12 @@ import SendIcon from "@mui/icons-material/Send";
 import { Page } from "../components";
 import { useAdmin } from "../hooks";
 import { useState, FormEvent } from "react";
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
-
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+} from "firebase/auth";
+import { app } from "../components/Page";
 
 const Admin = () => {
   // if (!connected) {
@@ -23,15 +27,20 @@ const Admin = () => {
   const [emailInput, setEmailInput] = useState<string>("");
   const [passwordInput, setPasswordInput] = useState<string>("");
 
-  const connectionWithEmailPassword = (emailInput: string, passwordInput: string) => {
-  console.log("🚀 ~ file: admin.tsx ~ line 27 ~ connectionWithEmailPassword ~ passwordInput", passwordInput)
-  console.log("🚀 ~ file: admin.tsx ~ line 27 ~ connectionWithEmailPassword ~ emailInput", emailInput)
-    const auth = getAuth();
-    signInWithEmailAndPassword(auth, emailInput, passwordInput).catch((err) => {
-      if (err.message.includes("auth/user-not-found")) {
-        createUserWithEmailAndPassword(auth, emailInput, passwordInput);
-      }
-    });
+  const connectionWithEmailPassword = (
+    emailInput: string,
+    passwordInput: string
+  ) => {
+    console.log(
+      "🚀 ~ file: admin.tsx ~ line 27 ~ connectionWithEmailPassword ~ passwordInput",
+      passwordInput
+    );
+    console.log(
+      "🚀 ~ file: admin.tsx ~ line 27 ~ connectionWithEmailPassword ~ emailInput",
+      app
+    );
+    const auth = getAuth(app);
+    signInWithEmailAndPassword(auth, emailInput, passwordInput);
   };
 
   return (
@@ -64,7 +73,9 @@ const Admin = () => {
           />
           <Button
             variant="contained"
-            /* endIcon={<SendIcon />} */ onClick={() => connectionWithEmailPassword(emailInput, passwordInput)}
+            /* endIcon={<SendIcon />} */ onClick={() =>
+              connectionWithEmailPassword(emailInput, passwordInput)
+            }
           >
             Log In
           </Button>
