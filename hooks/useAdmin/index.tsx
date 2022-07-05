@@ -5,7 +5,7 @@ import {
   signOut,
 } from "firebase/auth";
 import { collection, onSnapshot } from "firebase/firestore";
-import { auth, db, fetchProjects } from "../../components/Page";
+import { auth, db } from "../../components/Page";
 import { Project } from "../../types";
 
 const useAdmin = () => {
