@@ -1,6 +1,6 @@
 import { Button, Grid, Container } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
-import { NavBar, Page, ProjectForm, SigninForm } from "../components";
+import { NavBar, Page, ProjectForm, SigninForm, ProjectsTable } from "../components";
 import { useAdmin } from "../hooks";
 
 const Admin = () => {
@@ -37,6 +37,7 @@ const Admin = () => {
                   </Grid>
                   <Grid item xs={12}>
                     <h2>Tableau des projets</h2>
+                    <ProjectsTable />
                   </Grid>
                 </Grid>
               </Container>
