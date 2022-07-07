@@ -7,10 +7,8 @@ import {
   TableHead,
   TableRow,
   Paper,
-  Button,
   IconButton,
 } from "@mui/material";
-// import { EditIcon, DeleteIcon } from "@mui/icons-material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import { useAdmin } from "../../hooks";

@@ -59,25 +59,15 @@ const useAdmin = () => {
     }
   }, [connected]);
 
-
   const deleteProject = (p: Project) => {
     onSnapshot(collection(db, "projects"), (snapshot) => {
       const _projects: Project[] = [];
       snapshot.docs.forEach((doc) => {
         const data = doc.data() as Project;
-        console.log("🚀 ~ file: index.tsx ~ line 68 ~ snapshot.docs.forEach ~ data ", data )
-        console.log(p, '<<<<<<')
-       _projects.filter((data:Project) => data.order !== p.order)  ;
-       console.log("🚀 ~ file: index.tsx ~ line 71 ~ snapshot.docs.forEach ~ p.order", p.order)
-       console.log("🚀 ~ file: index.tsx ~ line 71 ~ snapshot.docs.forEach ~ data.order", data.order)
-
-    // setProjects((_projects: Project[]) => {
-    //   const pp = _projects.filter((_p: Project) => _p.title !== p.title);
-    //   // localStorage.setItem("tasks", JSON.stringify(Array.from(_tasks)));
-    //   return Array.from(pp);
-
+        _projects.filter((data) => data.order !== p.order);
+      });
     });
-  })};
+  };
 
   const editProject = (p: Project, c: string) => {
     const ppp = projects.find((_p: Project) => _p.title === p.title);
@@ -86,8 +76,7 @@ const useAdmin = () => {
     ppp.title = c;
     localStorage.setItem("tasks", JSON.stringify(Array.from(projects)));
     setProjects(Array.from(projects));
-  }
-
+  };
 
   return {
     connected,
