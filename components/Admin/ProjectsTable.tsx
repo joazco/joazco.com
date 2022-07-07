@@ -8,6 +8,7 @@ import {
   TableRow,
   Paper,
   Button,
+  IconButton,
 } from "@mui/material";
 // import { EditIcon, DeleteIcon } from "@mui/icons-material";
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -41,20 +42,18 @@ const ProjectsTable = () => {
                 {project.title}
               </TableCell>
               <TableCell align="right">
-                <Button
-                  variant="contained"
-                  endIcon={<EditIcon />} /* onClick={() => {
-                    onEdit(project)}} */
+
+                <IconButton>
+                  <EditIcon color="secondary" />
+                </IconButton>
+
+                <IconButton
+                  onClick={() => {
+                    deleteProject(project);
+                  }}
                 >
-                  Edit
-                </Button>
-                <Button
-                  variant="contained"
-                  endIcon={<DeleteIcon />}  onClick={() => {
-                    deleteProject(project)}}
-                >
-                  Delete
-                </Button>
+                  <DeleteIcon color="error"/>
+                </IconButton>
               </TableCell>
             </TableRow>
           ))}

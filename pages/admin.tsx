@@ -1,6 +1,12 @@
 import { Button, Grid, Container } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
-import { NavBar, Page, ProjectForm, SigninForm, ProjectsTable } from "../components";
+import {
+  NavBar,
+  Page,
+  ProjectForm,
+  SigninForm,
+  ProjectsTable,
+} from "../components";
 import { useAdmin } from "../hooks";
 
 const Admin = () => {
@@ -25,20 +31,20 @@ const Admin = () => {
             {!showForm && (
               <Container>
                 <Grid>
-                  <Grid item xs={12}>
-                    <Button
-                      variant="contained"
-                      endIcon={<AddIcon />}
-                      color="success"
-                      onClick={() => setShowForm(true)}
-                    >
-                      Nouveau projet
-                    </Button>
-                  </Grid>
+                  <Grid item xs={12}></Grid>
                   <Grid item xs={12}>
                     <h2>Tableau des projets</h2>
                     <ProjectsTable />
                   </Grid>
+                  <Button
+                    
+                    variant="contained"
+                    endIcon={<AddIcon />}
+                    color="success"
+                    onClick={() => setShowForm(true)}
+                  >
+                    Nouveau projet
+                  </Button>
                 </Grid>
               </Container>
             )}
