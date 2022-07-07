@@ -9,15 +9,13 @@ import {
   Paper,
   Button,
 } from "@mui/material";
-import { EditIcon, DeleteIcon } from "@mui/icons-material";
+// import { EditIcon, DeleteIcon } from "@mui/icons-material";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
 import { useAdmin } from "../../hooks";
 
 const ProjectsTable = () => {
-  const { projects } = useAdmin();
-  console.log(
-    "🚀 ~ file: ProjectsTable.tsx ~ line 15 ~ ProjectsTable ~ projects",
-    projects
-  );
+  const { projects, deleteProject } = useAdmin();
 
   return (
     <TableContainer component={Paper}>
@@ -39,18 +37,21 @@ const ProjectsTable = () => {
               <TableCell component="th" scope="row" align="right">
                 {project.order}
               </TableCell>
-              <TableCell align="right">{project.title}</TableCell>
+              <TableCell align="right" placeholder={project.title}>
+                {project.title}
+              </TableCell>
               <TableCell align="right">
                 <Button
                   variant="contained"
                   endIcon={<EditIcon />} /* onClick={() => {
-                    onDelete(project)}} */
+                    onEdit(project)}} */
                 >
                   Edit
                 </Button>
                 <Button
-                  variant="contained"  endIcon={<DeleteIcon />} /* onClick={() => {
-                    onEdit(project)}} */
+                  variant="contained"
+                  endIcon={<DeleteIcon />}  onClick={() => {
+                    deleteProject(project)}}
                 >
                   Delete
                 </Button>
