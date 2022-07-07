@@ -59,6 +59,25 @@ const useAdmin = () => {
     }
   }, [connected]);
 
+  const deleteProject = (p: Project) => {
+    onSnapshot(collection(db, "projects"), (snapshot) => {
+      const _projects: Project[] = [];
+      snapshot.docs.forEach((doc) => {
+        const data = doc.data() as Project;
+        _projects.filter((data) => data.order !== p.order);
+      });
+    });
+  };
+
+  const editProject = (p: Project, c: string) => {
+    const ppp = projects.find((_p: Project) => _p.title === p.title);
+
+    if (typeof ppp === "undefined") return;
+    ppp.title = c;
+    localStorage.setItem("tasks", JSON.stringify(Array.from(projects)));
+    setProjects(Array.from(projects));
+  };
+
   return {
     connected,
     emailInput,
@@ -70,6 +89,7 @@ const useAdmin = () => {
     logIn,
     logOut,
     setShowForm,
+    deleteProject,
   };
 };
 

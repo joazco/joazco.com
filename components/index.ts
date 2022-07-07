@@ -9,3 +9,4 @@ export { default as ContactForm } from "./Home/ContactForm";
 export { default as SigninForm } from "./Admin/SigninForm";
 export { default as NavBar } from "./Admin/NavBar";
 export { default as ProjectForm } from "./Admin/ProjectForm";
+export { default as ProjectsTable } from "./Admin/ProjectsTable";
