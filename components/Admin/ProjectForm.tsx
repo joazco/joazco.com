@@ -9,6 +9,15 @@ type ProjectFromProps = {
     image: string,
     order: number
   ) => void;
+
+  onEdit: (
+    title: string,
+    content: string,
+    link: string,
+    image: string,
+    order: number,
+    defaultValue: number
+  ) => void;
 };
 
 const ProjectForm = (props: ProjectFromProps) => {
@@ -26,7 +35,7 @@ const ProjectForm = (props: ProjectFromProps) => {
     setOrder,
   } = useAdmin();
 
-  const { onSubmit } = props;
+  const { onSubmit, onEdit } = props;
 
   return (
     <div className="admin">
@@ -40,7 +49,6 @@ const ProjectForm = (props: ProjectFromProps) => {
         onSubmit={(e) => {
           e.preventDefault();
           onSubmit(titleInput, contentInput, linkInput, imageInput, order);
-          return false;
         }}
       >
         <Grid container spacing={2}>
@@ -101,7 +109,7 @@ const ProjectForm = (props: ProjectFromProps) => {
               type=""
               required
               value={order}
-              onChange={(e) => setOrder(0)}
+              onChange={(e) => setOrder(3)}
             />
           </Grid>
           <Grid item xs={12}>
@@ -109,14 +117,14 @@ const ProjectForm = (props: ProjectFromProps) => {
               variant="contained"
               /* endIcon={<LoginIcon />}  */ type="submit"
             >
-             Ajouter
+              Ajouter
             </Button>
             <Button
               variant="contained"
               /* endIcon={<LoginIcon />}  */ type="submit"
-              onCancel ={() => setShowForm(false)}
+              onCancel={() => setShowForm(false)}
             >
-             Annuler
+              Annuler
             </Button>
           </Grid>
         </Grid>

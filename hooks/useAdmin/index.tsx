@@ -4,7 +4,13 @@ import {
   onAuthStateChanged,
   signOut,
 } from "firebase/auth";
-import { collection, onSnapshot } from "firebase/firestore";
+import {
+  collection,
+  onSnapshot,
+  addDoc,
+  updateDoc,
+  doc,
+} from "firebase/firestore";
 import { auth, db } from "../../components/Page";
 import { Project } from "../../types";
 
@@ -74,21 +80,53 @@ const useAdmin = () => {
     });
   };
 
-  const editProject = (p: Project, c: string) => {
-    const ppp = projects.find((_p: Project) => _p.title === p.title);
 
-    if (typeof ppp === "undefined") return;
-    ppp.title = c;
-    localStorage.setItem("tasks", JSON.stringify(Array.from(projects)));
-    setProjects(Array.from(projects));
+  const addProject = async (
+    title: string,
+    content: string,
+    link: string,
+    image: string,
+    order: number
+  ) => {
+    await addDoc(collection(db, "projects"), {
+      title,
+      content,
+      link,
+      image,
+      order,
+    })
+      .then((docRef) => {
+        updateDoc(doc(db, "projects", docRef.id), {
+          id: docRef.id,
+        });
+      })
+      .then(() => {
+        setShowForm(false);
+      });
   };
 
-  const addProject =(title:string, content:string, link:string, image:string, order:number) =>{
+  // useEffect(() => {
+  //   if(defaultValue){
+  //   setTitle(defaultValue.title);
+  //   setContent(defaultValue.content)
+  //  ....
+  //  }
+  //  }, [defaultValue]);
 
-  }
-
-
-  
+  const editProject = async (
+    title: string,
+    content: string,
+    link: string,
+    image: string,
+    order: number, 
+    id: number
+  ) => {
+    await updateDoc(doc(db, "projects" /* ,__ID__ */), {
+      // ...valuesFromForm,
+    }).then(() => {
+      setShowForm(false);
+    });
+  };
 
   return {
     connected,
@@ -108,6 +146,7 @@ const useAdmin = () => {
     setEmailInput,
     setOrder,
     addProject,
+    editProject,
     setPasswordInput,
     logIn,
     logOut,
