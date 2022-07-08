@@ -14,6 +14,11 @@ const useAdmin = () => {
   const [connected, setConnected] = useState<boolean | undefined>();
   const [projects, setProjects] = useState<Project[]>([]);
   const [showForm, setShowForm] = useState<boolean>(false);
+  const [titleInput, setTitleInput] = useState<string>("");
+  const [contentInput, setContentInput] = useState<string>("");
+  const [linkInput, setLinkInput] = useState<string>("");
+  const [imageInput, setImageInput] = useState<string>("");
+  const [order, setOrder] = useState<number>();
 
   const logIn = (emailInput: string, passwordInput: string) => {
     signInWithEmailAndPassword(auth, emailInput, passwordInput).catch(
@@ -78,13 +83,31 @@ const useAdmin = () => {
     setProjects(Array.from(projects));
   };
 
+  const addProject =(title:string, content:string, link:string, image:string, order:number) =>{
+
+  }
+
+
+  
+
   return {
     connected,
     emailInput,
     passwordInput,
     projects,
     showForm,
+    titleInput,
+    contentInput,
+    linkInput,
+    imageInput,
+    order,
+    setTitleInput,
+    setContentInput,
+    setLinkInput,
+    setImageInput,
     setEmailInput,
+    setOrder,
+    addProject,
     setPasswordInput,
     logIn,
     logOut,

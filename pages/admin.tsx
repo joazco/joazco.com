@@ -10,7 +10,8 @@ import {
 import { useAdmin } from "../hooks";
 
 const Admin = () => {
-  const { connected, showForm, logIn, logOut, setShowForm } = useAdmin();
+  const { connected, showForm, logIn, logOut, setShowForm, addProject } =
+    useAdmin();
 
   if (connected === undefined) {
     return (
@@ -28,6 +29,8 @@ const Admin = () => {
             <NavBar onClickLogout={() => logOut()} />
           </Grid>
           <Grid item xs={12}>
+          <Grid item xs={12}>
+          </Grid>
             {!showForm && (
               <Container>
                 <Grid>
@@ -37,7 +40,6 @@ const Admin = () => {
                     <ProjectsTable />
                   </Grid>
                   <Button
-                    
                     variant="contained"
                     endIcon={<AddIcon />}
                     color="success"
@@ -52,7 +54,11 @@ const Admin = () => {
               <Container>
                 <Grid>
                   <Grid item>
-                    <ProjectForm />
+                    <ProjectForm
+                      onSubmit={(title, content, link, image, order) =>
+                        addProject(title, content, link, image, order)
+                      }
+                    />
                   </Grid>
                 </Grid>
               </Container>
