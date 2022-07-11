@@ -57,23 +57,24 @@ const Admin = () => {
                       onSubmit={(title, content, link, image, order) =>
                         addProject(title, content, link, image, order)
                       }
-                      onEdit={(
-                        title,
-                        content,
-                        link,
-                        image,
-                        order,
-                        defaultValue
-                      ) =>
-                        editProject(
-                          title,
-                          content,
-                          link,
-                          image,
-                          order,
-                          defaultValue
-                        )
-                      }
+                      
+                      // onEdit={(
+                      //   title,
+                      //   content,
+                      //   link,
+                      //   image,
+                      //   order,
+                      //   id?,
+                      // ) =>
+                      //   editProject(
+                      //     title,
+                      //     content,
+                      //     link,
+                      //     image,
+                      //     order,
+                      //     id?
+                      //   )
+                      // }
                     />
                   </Grid>
                 </Grid>

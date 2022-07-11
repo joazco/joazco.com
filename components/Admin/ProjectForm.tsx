@@ -1,5 +1,6 @@
 import { Button, TextField, Box, Grid } from "@mui/material";
 import { useAdmin } from "../../hooks";
+import { Project } from "../../types";
 
 type ProjectFromProps = {
   onSubmit: (
@@ -10,14 +11,7 @@ type ProjectFromProps = {
     order: number
   ) => void;
 
-  onEdit: (
-    title: string,
-    content: string,
-    link: string,
-    image: string,
-    order: number,
-    defaultValue: number
-  ) => void;
+  onEdit: (defaultValue?: Project) => void;
 };
 
 const ProjectForm = (props: ProjectFromProps) => {
@@ -35,7 +29,7 @@ const ProjectForm = (props: ProjectFromProps) => {
     setOrder,
   } = useAdmin();
 
-  const { onSubmit, onEdit } = props;
+  const { onSubmit, onEdit, /* onCancel */ } = props;
 
   return (
     <div className="admin">
@@ -122,7 +116,6 @@ const ProjectForm = (props: ProjectFromProps) => {
             <Button
               variant="contained"
               /* endIcon={<LoginIcon />}  */ type="submit"
-              onCancel={() => setShowForm(false)}
             >
               Annuler
             </Button>

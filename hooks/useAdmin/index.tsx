@@ -25,6 +25,7 @@ const useAdmin = () => {
   const [linkInput, setLinkInput] = useState<string>("");
   const [imageInput, setImageInput] = useState<string>("");
   const [order, setOrder] = useState<number>();
+  const [defaultValue, setDefaultValue] = useState<Project[]>([]);
 
   const logIn = (emailInput: string, passwordInput: string) => {
     signInWithEmailAndPassword(auth, emailInput, passwordInput).catch(
@@ -53,6 +54,9 @@ const useAdmin = () => {
         snapshot.docs.forEach((doc) => {
           const data = doc.data() as Project;
           _projects.push(data);
+          console.log("🚀 ~ file: index.tsx ~ line 57 ~ snapshot.docs.forEach ~ _projects", _projects)
+          console.log("🚀 ~ file: index.tsx ~ line 57 ~ snapshot.docs.forEach ~ _projects", _projects[3])
+          
         });
         setProjects(
           _projects.sort((a, b) => {
@@ -80,7 +84,6 @@ const useAdmin = () => {
     });
   };
 
-
   const addProject = async (
     title: string,
     content: string,
@@ -106,23 +109,31 @@ const useAdmin = () => {
   };
 
   // useEffect(() => {
-  //   if(defaultValue){
-  //   setTitle(defaultValue.title);
-  //   setContent(defaultValue.content)
-  //  ....
-  //  }
-  //  }, [defaultValue]);
+  //   if (defaultValue) {
+  //     setTitleInput(defaultValue.title);
+  //     setContentInput(defaultValue.content);
+  //     setLinkInput(defaultValue.link);
+  //     setImageInput(defaultValue.image);
+  //     setEmailInput(defaultValue.email);
+  //     setOrder(defaultValue.order);
+  //   }
+  // }, [defaultValue]);
+
 
   const editProject = async (
     title: string,
     content: string,
     link: string,
     image: string,
-    order: number, 
-    id: number
+    order: number,
+    id?: string
   ) => {
-    await updateDoc(doc(db, "projects" /* ,__ID__ */), {
-      // ...valuesFromForm,
+    await updateDoc(doc(db, "projects", id), {
+      title,
+      content,
+      link,
+      image,
+      order,
     }).then(() => {
       setShowForm(false);
     });
