@@ -10,7 +10,7 @@ import {
 import { useAdmin } from "../hooks";
 
 const Admin = () => {
-  const { connected, showForm, logIn, logOut, setShowForm, addProject, editProject } =
+  const { connected, showForm, logIn, logOut, setShowForm, /* handleEdit */ } =
     useAdmin();
 
   if (connected === undefined) {
@@ -36,7 +36,7 @@ const Admin = () => {
                   <Grid item xs={12}></Grid>
                   <Grid item xs={12}>
                     <h2>Tableau des projets</h2>
-                    <ProjectsTable />
+                    <ProjectsTable /* onEdit={handleEdit} *//>
                   </Grid>
                   <Button
                     variant="contained"
@@ -53,29 +53,7 @@ const Admin = () => {
               <Container>
                 <Grid>
                   <Grid item>
-                    <ProjectForm
-                      onSubmit={(title, content, link, image, order) =>
-                        addProject(title, content, link, image, order)
-                      }
-                      
-                      // onEdit={(
-                      //   title,
-                      //   content,
-                      //   link,
-                      //   image,
-                      //   order,
-                      //   id?,
-                      // ) =>
-                      //   editProject(
-                      //     title,
-                      //     content,
-                      //     link,
-                      //     image,
-                      //     order,
-                      //     id?
-                      //   )
-                      // }
-                    />
+                    <ProjectForm /> //! avoir si y'a pas un props
                   </Grid>
                 </Grid>
               </Container>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, FormEvent } from "react";
 import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
@@ -54,9 +54,14 @@ const useAdmin = () => {
         snapshot.docs.forEach((doc) => {
           const data = doc.data() as Project;
           _projects.push(data);
-          console.log("🚀 ~ file: index.tsx ~ line 57 ~ snapshot.docs.forEach ~ _projects", _projects)
-          console.log("🚀 ~ file: index.tsx ~ line 57 ~ snapshot.docs.forEach ~ _projects", _projects[3])
-          
+          console.log(
+            "🚀 ~ file: index.tsx ~ line 57 ~ snapshot.docs.forEach ~ _projects",
+            _projects
+          );
+          console.log(
+            "🚀 ~ file: index.tsx ~ line 57 ~ snapshot.docs.forEach ~ _projects",
+            _projects[3]
+          );
         });
         setProjects(
           _projects.sort((a, b) => {
@@ -84,19 +89,14 @@ const useAdmin = () => {
     });
   };
 
-  const addProject = async (
-    title: string,
-    content: string,
-    link: string,
-    image: string,
-    order: number
-  ) => {
+  const handleSubmit = async (e: FormEvent<HTMLButtonElement>) => {
+    e.preventDefault();
     await addDoc(collection(db, "projects"), {
-      title,
-      content,
-      link,
-      image,
-      order,
+      title: titleInput,
+      content: contentInput,
+      order: order,
+      image: imageInput,
+      link: linkInput,
     })
       .then((docRef) => {
         updateDoc(doc(db, "projects", docRef.id), {
@@ -119,25 +119,18 @@ const useAdmin = () => {
   //   }
   // }, [defaultValue]);
 
-
-  const editProject = async (
-    title: string,
-    content: string,
-    link: string,
-    image: string,
-    order: number,
-    id?: string
-  ) => {
-    await updateDoc(doc(db, "projects", id), {
-      title,
-      content,
-      link,
-      image,
-      order,
-    }).then(() => {
-      setShowForm(false);
-    });
-  };
+  // const handleEdit = async (e: FormEvent<HTMLButtonElement>) => {
+  //   await updateDoc(doc(db, "projects", id), {
+  //     title: titleInput,
+  //     content: contentInput,
+  //     order: order,
+  //     image: imageInput,
+  //     link: linkInput,
+  //     id?: id
+  //   }).then(() => {
+  //     setShowForm(false);
+  //   });
+  // };
 
   return {
     connected,
@@ -156,8 +149,9 @@ const useAdmin = () => {
     setImageInput,
     setEmailInput,
     setOrder,
-    addProject,
-    editProject,
+    // addProject,
+    handleSubmit,
+    // handleEdit,
     setPasswordInput,
     logIn,
     logOut,

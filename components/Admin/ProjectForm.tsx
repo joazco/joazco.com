@@ -1,17 +1,10 @@
+import { HealthAndSafetyTwoTone } from "@mui/icons-material";
 import { Button, TextField, Box, Grid } from "@mui/material";
 import { useAdmin } from "../../hooks";
 import { Project } from "../../types";
 
 type ProjectFromProps = {
-  onSubmit: (
-    title: string,
-    content: string,
-    link: string,
-    image: string,
-    order: number
-  ) => void;
-
-  onEdit: (defaultValue?: Project) => void;
+  onEdit: (defaultValue?: Project, id?:string) => void;
 };
 
 const ProjectForm = (props: ProjectFromProps) => {
@@ -27,9 +20,10 @@ const ProjectForm = (props: ProjectFromProps) => {
     setImageInput,
     setEmailInput,
     setOrder,
+    handleSubmit,
   } = useAdmin();
 
-  const { onSubmit, onEdit, /* onCancel */ } = props;
+  const { onEdit /* onCancel */ } = props;
 
   return (
     <div className="admin">
@@ -41,8 +35,7 @@ const ProjectForm = (props: ProjectFromProps) => {
         }}
         autoComplete="off"
         onSubmit={(e) => {
-          e.preventDefault();
-          onSubmit(titleInput, contentInput, linkInput, imageInput, order);
+          handleSubmit(e);
         }}
       >
         <Grid container spacing={2}>
