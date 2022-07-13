@@ -10,8 +10,15 @@ import {
 import { useAdmin } from "../hooks";
 
 const Admin = () => {
-  const { connected, showForm, logIn, logOut, setShowForm, /* handleEdit */ } =
-    useAdmin();
+  const {
+    connected,
+    showForm,
+    projectEdit,
+    logIn,
+    logOut,
+    setShowForm,
+    setProjectEdit,
+  } = useAdmin();
 
   if (connected === undefined) {
     return (
@@ -36,16 +43,21 @@ const Admin = () => {
                   <Grid item xs={12}></Grid>
                   <Grid item xs={12}>
                     <h2>Tableau des projets</h2>
-                    <ProjectsTable /* onEdit={handleEdit} *//>
+                    <Button
+                      variant="contained"
+                      endIcon={<AddIcon />}
+                      color="success"
+                      onClick={() => setShowForm(true)}
+                    >
+                      Nouveau projet
+                    </Button>
+                    <ProjectsTable
+                      onEdit={(project) => {
+                        setProjectEdit(project);
+                        setShowForm(true);
+                      }}
+                    />
                   </Grid>
-                  <Button
-                    variant="contained"
-                    endIcon={<AddIcon />}
-                    color="success"
-                    onClick={() => setShowForm(true)}
-                  >
-                    Nouveau projet
-                  </Button>
                 </Grid>
               </Container>
             )}
@@ -53,7 +65,18 @@ const Admin = () => {
               <Container>
                 <Grid>
                   <Grid item>
-                    <ProjectForm /> //! avoir si y'a pas un props
+                    <ProjectForm
+                      defaultValue={projectEdit}
+                      onCancel={() => {
+                        setProjectEdit(undefined);
+                        setShowForm(false);
+                      }}
+                      onSaved={() => {
+                        setProjectEdit(undefined);
+                        setShowForm(false);
+                      }}
+                    />
+                    //! avoir si y'a pas un props
                   </Grid>
                 </Grid>
               </Container>

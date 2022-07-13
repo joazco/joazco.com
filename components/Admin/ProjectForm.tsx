@@ -3,8 +3,10 @@ import { Button, TextField, Box, Grid } from "@mui/material";
 import { useAdmin } from "../../hooks";
 import { Project } from "../../types";
 
-type ProjectFromProps = {
-  onEdit: (defaultValue?: Project, id?:string) => void;
+export type ProjectFromProps = {
+  defaultValue?: Project;
+  onSaved: () => void;
+  onCancel: () => void;
 };
 
 const ProjectForm = (props: ProjectFromProps) => {
@@ -23,7 +25,7 @@ const ProjectForm = (props: ProjectFromProps) => {
     handleSubmit,
   } = useAdmin();
 
-  const { onEdit /* onCancel */ } = props;
+  const { onCancel } = props;
 
   return (
     <div className="admin">
@@ -108,7 +110,8 @@ const ProjectForm = (props: ProjectFromProps) => {
             </Button>
             <Button
               variant="contained"
-              /* endIcon={<LoginIcon />}  */ type="submit"
+              /* endIcon={<LoginIcon />}  */ type="button"
+              onClick={() => onCancel()}
             >
               Annuler
             </Button>

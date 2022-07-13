@@ -12,9 +12,15 @@ import {
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import { useAdmin } from "../../hooks";
+import { Project } from "../../types";
 
-const ProjectsTable = () => {
-  const { projects, deleteProject,/*  onEdit, */ setShowForm } = useAdmin();
+type ProjectsTableProps = {
+  onEdit: (project: Project) => void;
+};
+
+const ProjectsTable = (props: ProjectsTableProps) => {
+  const { projects, deleteProject } = useAdmin();
+  const { onEdit } = props;
 
   return (
     <TableContainer component={Paper}>
@@ -40,7 +46,11 @@ const ProjectsTable = () => {
                 {project.title}
               </TableCell>
               <TableCell align="right">
-                <IconButton onClick={() => {/* onEdit(project, project.id) */ ; setShowForm(true);}}>
+                <IconButton
+                  onClick={() => {
+                    onEdit(project);
+                  }}
+                >
                   <EditIcon color="secondary" />
                 </IconButton>
 

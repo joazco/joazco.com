@@ -20,12 +20,15 @@ const useAdmin = () => {
   const [connected, setConnected] = useState<boolean | undefined>();
   const [projects, setProjects] = useState<Project[]>([]);
   const [showForm, setShowForm] = useState<boolean>(false);
+  const [projectEdit, setProjectEdit] = useState<Project | undefined>();
+
+  /** Mettre dans un autre hook useProjectForm(props: ProjectFromProps) */
   const [titleInput, setTitleInput] = useState<string>("");
   const [contentInput, setContentInput] = useState<string>("");
   const [linkInput, setLinkInput] = useState<string>("");
   const [imageInput, setImageInput] = useState<string>("");
   const [order, setOrder] = useState<number>();
-  const [defaultValue, setDefaultValue] = useState<Project[]>([]);
+  /** */
 
   const logIn = (emailInput: string, passwordInput: string) => {
     signInWithEmailAndPassword(auth, emailInput, passwordInput).catch(
@@ -89,9 +92,9 @@ const useAdmin = () => {
     });
   };
 
-  const handleSubmit = async (e: FormEvent<HTMLButtonElement>) => {
+  const handleSubmit = (e: FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    await addDoc(collection(db, "projects"), {
+    addDoc(collection(db, "projects"), {
       title: titleInput,
       content: contentInput,
       order: order,
@@ -143,6 +146,7 @@ const useAdmin = () => {
     linkInput,
     imageInput,
     order,
+    projectEdit,
     setTitleInput,
     setContentInput,
     setLinkInput,
@@ -157,6 +161,7 @@ const useAdmin = () => {
     logOut,
     setShowForm,
     deleteProject,
+    setProjectEdit,
   };
 };
 
