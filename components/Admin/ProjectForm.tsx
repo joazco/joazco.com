@@ -1,6 +1,6 @@
 import { HealthAndSafetyTwoTone } from "@mui/icons-material";
 import { Button, TextField, Box, Grid } from "@mui/material";
-import { useAdmin } from "../../hooks";
+import { useProjectForm } from "../../hooks";
 import { Project } from "../../types";
 
 export type ProjectFromProps = {
@@ -20,10 +20,10 @@ const ProjectForm = (props: ProjectFromProps) => {
     setContentInput,
     setLinkInput,
     setImageInput,
-    setEmailInput,
     setOrder,
     handleSubmit,
-  } = useAdmin();
+  } = useProjectForm(props);
+
 
   const { onCancel } = props;
 

@@ -22,14 +22,6 @@ const useAdmin = () => {
   const [showForm, setShowForm] = useState<boolean>(false);
   const [projectEdit, setProjectEdit] = useState<Project | undefined>();
 
-  /** Mettre dans un autre hook useProjectForm(props: ProjectFromProps) */
-  const [titleInput, setTitleInput] = useState<string>("");
-  const [contentInput, setContentInput] = useState<string>("");
-  const [linkInput, setLinkInput] = useState<string>("");
-  const [imageInput, setImageInput] = useState<string>("");
-  const [order, setOrder] = useState<number>();
-  /** */
-
   const logIn = (emailInput: string, passwordInput: string) => {
     signInWithEmailAndPassword(auth, emailInput, passwordInput).catch(
       (err) => {}
@@ -57,14 +49,6 @@ const useAdmin = () => {
         snapshot.docs.forEach((doc) => {
           const data = doc.data() as Project;
           _projects.push(data);
-          console.log(
-            "🚀 ~ file: index.tsx ~ line 57 ~ snapshot.docs.forEach ~ _projects",
-            _projects
-          );
-          console.log(
-            "🚀 ~ file: index.tsx ~ line 57 ~ snapshot.docs.forEach ~ _projects",
-            _projects[3]
-          );
         });
         setProjects(
           _projects.sort((a, b) => {
@@ -82,85 +66,18 @@ const useAdmin = () => {
     }
   }, [connected]);
 
-  const deleteProject = (p: Project) => {
-    onSnapshot(collection(db, "projects"), (snapshot) => {
-      const _projects: Project[] = [];
-      snapshot.docs.forEach((doc) => {
-        const data = doc.data() as Project;
-        _projects.filter((data) => data.order !== p.order);
-      });
-    });
-  };
-
-  const handleSubmit = (e: FormEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    addDoc(collection(db, "projects"), {
-      title: titleInput,
-      content: contentInput,
-      order: order,
-      image: imageInput,
-      link: linkInput,
-    })
-      .then((docRef) => {
-        updateDoc(doc(db, "projects", docRef.id), {
-          id: docRef.id,
-        });
-      })
-      .then(() => {
-        setShowForm(false);
-      });
-  };
-
-  // useEffect(() => {
-  //   if (defaultValue) {
-  //     setTitleInput(defaultValue.title);
-  //     setContentInput(defaultValue.content);
-  //     setLinkInput(defaultValue.link);
-  //     setImageInput(defaultValue.image);
-  //     setEmailInput(defaultValue.email);
-  //     setOrder(defaultValue.order);
-  //   }
-  // }, [defaultValue]);
-
-  // const handleEdit = async (e: FormEvent<HTMLButtonElement>) => {
-  //   await updateDoc(doc(db, "projects", id), {
-  //     title: titleInput,
-  //     content: contentInput,
-  //     order: order,
-  //     image: imageInput,
-  //     link: linkInput,
-  //     id?: id
-  //   }).then(() => {
-  //     setShowForm(false);
-  //   });
-  // };
-
   return {
     connected,
     emailInput,
     passwordInput,
     projects,
     showForm,
-    titleInput,
-    contentInput,
-    linkInput,
-    imageInput,
-    order,
     projectEdit,
-    setTitleInput,
-    setContentInput,
-    setLinkInput,
-    setImageInput,
     setEmailInput,
-    setOrder,
-    // addProject,
-    handleSubmit,
-    // handleEdit,
     setPasswordInput,
     logIn,
     logOut,
     setShowForm,
-    deleteProject,
     setProjectEdit,
   };
 };
