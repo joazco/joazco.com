@@ -1,20 +1,7 @@
 import { useState, useEffect, FormEvent } from "react";
-import {
-  collection,
-  onSnapshot,
-  addDoc,
-  updateDoc,
-  doc,
-} from "firebase/firestore";
-import { auth, db } from "../../components/Page";
-import { Project } from "../../types";
-import useAdmin from "../useAdmin";
-
-export type ProjectFromProps = {
-  defaultValue?: Project;
-  onSaved: () => void;
-  onCancel: () => void;
-};
+import { collection, addDoc, updateDoc, doc } from "firebase/firestore";
+import { db } from "../../components/Page";
+import { ProjectFromProps } from "../../components/Admin/ProjectForm";
 
 const useProjectForm = (props: ProjectFromProps) => {
   const [titleInput, setTitleInput] = useState<string>("");
@@ -23,14 +10,11 @@ const useProjectForm = (props: ProjectFromProps) => {
   const [imageInput, setImageInput] = useState<string>("");
   const [order, setOrder] = useState<number>();
 
-  const { onCancel, onSaved, defaultValue } = props;
-  console.log("🚀 ~ file: index.tsx ~ line 29 ~ useProjectForm ~ defaultValue", defaultValue)
-  const { setShowForm } = useAdmin();
+  const { onSaved, defaultValue } = props;
 
-  const handleSubmit = (e: FormEvent<HTMLButtonElement>) => {
-    if (defaultValue != undefined) {
-      console.log("🚀 ~ file: index.tsx ~ line 35 ~ handleSubmit ~ defaultValue", defaultValue)
-      e.preventDefault();
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (defaultValue === undefined) {
       addDoc(collection(db, "projects"), {
         title: titleInput,
         content: contentInput,
@@ -43,24 +27,33 @@ const useProjectForm = (props: ProjectFromProps) => {
             id: docRef.id,
           });
         })
-        .then(() => {
-          setShowForm(false);
+        .finally(() => {
+          onSaved();
         });
+    } else {
+      updateDoc(doc(db, "projects", defaultValue.id), {
+        title: titleInput,
+        content: contentInput,
+        order: order,
+        image: imageInput,
+        link: linkInput,
+      }).finally(() => {
+        onSaved();
+      });
     }
   };
 
-  // useEffect(() => {
-  //   if (defaultValue) {
-  //     setTitleInput(defaultValue.title);
-  //     setContentInput(defaultValue.content);
-  //     setLinkInput(defaultValue.link);
-  //     setImageInput(defaultValue.image);
-  //     setOrder(defaultValue.order);
-  //   }
-  // }, [defaultValue]);
+  useEffect(() => {
+    if (defaultValue) {
+      setTitleInput(defaultValue.title);
+      setContentInput(defaultValue.content);
+      setLinkInput(defaultValue.link);
+      setImageInput(defaultValue.image);
+      setOrder(defaultValue.order);
+    }
+  }, [defaultValue]);
 
   return {
-    handleSubmit,
     titleInput,
     contentInput,
     linkInput,
@@ -71,6 +64,7 @@ const useProjectForm = (props: ProjectFromProps) => {
     setLinkInput,
     setImageInput,
     setOrder,
+    handleSubmit,
   };
 };
 

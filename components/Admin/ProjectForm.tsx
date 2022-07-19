@@ -1,4 +1,3 @@
-import { HealthAndSafetyTwoTone } from "@mui/icons-material";
 import { Button, TextField, Box, Grid } from "@mui/material";
 import { useProjectForm } from "../../hooks";
 import { Project } from "../../types";
@@ -24,8 +23,7 @@ const ProjectForm = (props: ProjectFromProps) => {
     handleSubmit,
   } = useProjectForm(props);
 
-
-  const { onCancel } = props;
+  const { defaultValue, onCancel } = props;
 
   return (
     <div className="admin">
@@ -95,10 +93,10 @@ const ProjectForm = (props: ProjectFromProps) => {
               id="outlined-basic"
               label=""
               variant="outlined"
-              type=""
+              type="number"
               required
               value={order}
-              onChange={(e) => setOrder(3)}
+              onChange={(e) => setOrder(Number(e.target.value))}
             />
           </Grid>
           <Grid item xs={12}>
@@ -106,7 +104,11 @@ const ProjectForm = (props: ProjectFromProps) => {
               variant="contained"
               /* endIcon={<LoginIcon />}  */ type="submit"
             >
-              Ajouter
+              {defaultValue === undefined ? (
+                <span>Ajouter</span>
+              ) : (
+                <span>Modifier</span>
+              )}
             </Button>
             <Button
               variant="contained"
