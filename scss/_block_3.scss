@@ -14,10 +14,11 @@
   }
   .joazco--block-3-content {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     width: 100%;
     > div {
-      flex-basis: 50%;
+      flex-basis: 45%;
     }
     .joazco--block-3-content-project {
       padding: 20px;

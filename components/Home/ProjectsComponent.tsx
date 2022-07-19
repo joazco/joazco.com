@@ -32,7 +32,7 @@ const ProjectsComponent = ({ projects }: ProjectsComponentProps) => {
             >
               <div key={project.title}>
                 <h3>{project.title}</h3>
-                <p>{project.content}</p>
+                <p dangerouslySetInnerHTML={{ __html: project.content }}></p>
                 <div className="joazco--block-3-content-link-content">
                   <a href={project.link}>
                     <img
