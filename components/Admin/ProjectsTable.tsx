@@ -19,7 +19,7 @@ type ProjectsTableProps = {
 };
 
 const ProjectsTable = (props: ProjectsTableProps) => {
-  const { projects } = useAdmin();
+  const { projects, deleteProject } = useAdmin();
   const { onEdit } = props;
 
   return (
@@ -56,6 +56,7 @@ const ProjectsTable = (props: ProjectsTableProps) => {
 
                 <IconButton
                   onClick={() => {
+                    deleteProject(project);
                   }}
                 >
                   <DeleteIcon color="error" />
