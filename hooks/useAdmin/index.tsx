@@ -1,16 +1,10 @@
-import { useState, useEffect, FormEvent } from "react";
+import { useState, useEffect } from "react";
 import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
   signOut,
 } from "firebase/auth";
-import {
-  collection,
-  onSnapshot,
-  addDoc,
-  updateDoc,
-  doc,
-} from "firebase/firestore";
+import { collection, onSnapshot, doc, deleteDoc } from "firebase/firestore";
 import { auth, db } from "../../components/Page";
 import { Project } from "../../types";
 
@@ -30,6 +24,13 @@ const useAdmin = () => {
 
   const logOut = () => {
     signOut(auth);
+  };
+
+  const deleteProject = (project: Project) => {
+    const { title, id } = project;
+    if (window.confirm(`Êtes-vous sûre de vouloir supprimer "${title}" ?`)) {
+      deleteDoc(doc(db, "projects", id));
+    }
   };
 
   useEffect(() => {
@@ -79,6 +80,7 @@ const useAdmin = () => {
     logOut,
     setShowForm,
     setProjectEdit,
+    deleteProject,
   };
 };
 
