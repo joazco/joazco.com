@@ -12,8 +12,7 @@ const SigninForm = (props: SigninFormProps) => {
   const { onSubmit } = props;
 
   return (
-    <div className="admin">
-      <img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/images%2Fjoazco_logo_blank_72x72.png?alt=media&token=00e5c472-469e-4683-8653-9205d0417fe5" />
+    <div className="admin-login">
       <Box
         component="form"
         sx={{
@@ -26,7 +25,10 @@ const SigninForm = (props: SigninFormProps) => {
           return false;
         }}
       >
+
         <Grid container spacing={2}>
+        <div className="input-zone">
+        <img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/images%2Fjoazco_logo_blank_72x72.png?alt=media&token=00e5c472-469e-4683-8653-9205d0417fe5"/>
           <Grid item xs={12}>
             <TextField
               id="outlined-basic"
@@ -54,6 +56,7 @@ const SigninForm = (props: SigninFormProps) => {
               Connexion
             </Button>
           </Grid>
+          </div>
         </Grid>
       </Box>
     </div>

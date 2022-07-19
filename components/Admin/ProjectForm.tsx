@@ -26,8 +26,7 @@ const ProjectForm = (props: ProjectFromProps) => {
   const { defaultValue, onCancel } = props;
 
   return (
-    <div className="admin">
-      <img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/images%2Fjoazco_logo_blank_72x72.png?alt=media&token=00e5c472-469e-4683-8653-9205d0417fe5" />
+    <div className="admin-login">
       <Box
         component="form"
         sx={{
@@ -100,10 +99,7 @@ const ProjectForm = (props: ProjectFromProps) => {
             />
           </Grid>
           <Grid item xs={12}>
-            <Button
-              variant="contained"
-              /* endIcon={<LoginIcon />}  */ type="submit"
-            >
+            <Button variant="contained" type="submit">
               {defaultValue === undefined ? (
                 <span>Ajouter</span>
               ) : (
@@ -112,7 +108,7 @@ const ProjectForm = (props: ProjectFromProps) => {
             </Button>
             <Button
               variant="contained"
-              /* endIcon={<LoginIcon />}  */ type="button"
+              type="button"
               onClick={() => onCancel()}
             >
               Annuler
