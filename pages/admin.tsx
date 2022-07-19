@@ -10,7 +10,15 @@ import {
 import { useAdmin } from "../hooks";
 
 const Admin = () => {
-  const { connected, showForm, logIn, logOut, setShowForm } = useAdmin();
+  const {
+    connected,
+    showForm,
+    projectEdit,
+    logIn,
+    logOut,
+    setShowForm,
+    setProjectEdit,
+  } = useAdmin();
 
   if (connected === undefined) {
     return (
@@ -28,23 +36,28 @@ const Admin = () => {
             <NavBar onClickLogout={() => logOut()} />
           </Grid>
           <Grid item xs={12}>
+            <Grid item xs={12}></Grid>
             {!showForm && (
               <Container>
                 <Grid>
                   <Grid item xs={12}></Grid>
                   <Grid item xs={12}>
                     <h2>Tableau des projets</h2>
-                    <ProjectsTable />
+                    <Button
+                      variant="contained"
+                      endIcon={<AddIcon />}
+                      color="success"
+                      onClick={() => setShowForm(true)}
+                    >
+                      Nouveau projet
+                    </Button>
+                    <ProjectsTable
+                      onEdit={(project) => {
+                        setProjectEdit(project);
+                        setShowForm(true);
+                      }}
+                    />
                   </Grid>
-                  <Button
-                    
-                    variant="contained"
-                    endIcon={<AddIcon />}
-                    color="success"
-                    onClick={() => setShowForm(true)}
-                  >
-                    Nouveau projet
-                  </Button>
                 </Grid>
               </Container>
             )}
@@ -52,7 +65,18 @@ const Admin = () => {
               <Container>
                 <Grid>
                   <Grid item>
-                    <ProjectForm />
+                    <ProjectForm
+                      defaultValue={projectEdit}
+                      onCancel={() => {
+                        setProjectEdit(undefined);
+                        setShowForm(false);
+                      }}
+                      onSaved={() => {
+                        setProjectEdit(undefined);
+                        setShowForm(false);
+                      }}
+                    />
+                    //! avoir si y'a pas un props
                   </Grid>
                 </Grid>
               </Container>

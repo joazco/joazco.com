@@ -1,10 +1,16 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, FormEvent } from "react";
 import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
   signOut,
 } from "firebase/auth";
-import { collection, onSnapshot } from "firebase/firestore";
+import {
+  collection,
+  onSnapshot,
+  addDoc,
+  updateDoc,
+  doc,
+} from "firebase/firestore";
 import { auth, db } from "../../components/Page";
 import { Project } from "../../types";
 
@@ -14,6 +20,7 @@ const useAdmin = () => {
   const [connected, setConnected] = useState<boolean | undefined>();
   const [projects, setProjects] = useState<Project[]>([]);
   const [showForm, setShowForm] = useState<boolean>(false);
+  const [projectEdit, setProjectEdit] = useState<Project | undefined>();
 
   const logIn = (emailInput: string, passwordInput: string) => {
     signInWithEmailAndPassword(auth, emailInput, passwordInput).catch(
@@ -59,37 +66,19 @@ const useAdmin = () => {
     }
   }, [connected]);
 
-  const deleteProject = (p: Project) => {
-    onSnapshot(collection(db, "projects"), (snapshot) => {
-      const _projects: Project[] = [];
-      snapshot.docs.forEach((doc) => {
-        const data = doc.data() as Project;
-        _projects.filter((data) => data.order !== p.order);
-      });
-    });
-  };
-
-  const editProject = (p: Project, c: string) => {
-    const ppp = projects.find((_p: Project) => _p.title === p.title);
-
-    if (typeof ppp === "undefined") return;
-    ppp.title = c;
-    localStorage.setItem("tasks", JSON.stringify(Array.from(projects)));
-    setProjects(Array.from(projects));
-  };
-
   return {
     connected,
     emailInput,
     passwordInput,
     projects,
     showForm,
+    projectEdit,
     setEmailInput,
     setPasswordInput,
     logIn,
     logOut,
     setShowForm,
-    deleteProject,
+    setProjectEdit,
   };
 };
 
