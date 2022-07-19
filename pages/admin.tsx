@@ -64,7 +64,7 @@ const Admin = () => {
             {showForm && (
               <Container>
                 <Grid>
-                  <Grid item>
+                  <Grid>
                     <ProjectForm
                       defaultValue={projectEdit}
                       onCancel={() => {
@@ -76,7 +76,6 @@ const Admin = () => {
                         setShowForm(false);
                       }}
                     />
-                    //! avoir si y'a pas un props
                   </Grid>
                 </Grid>
               </Container>

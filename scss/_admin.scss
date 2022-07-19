@@ -1,10 +1,10 @@
-.admin {
+.admin-login {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-primary);
   height: 100vh;
+  margin: 5%;
   .MuiGrid-root {
     width: 100%;
     .MuiFormControl-root {
@@ -13,10 +13,20 @@
   }
   button {
     background-color: var(--color-primary);
+    width: 50ex;
     &:hover {
       background-color: var(--color-primary);
     }
   }
+.input-zone{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+} 
+.input-zone> * {
+  margin: 2%;
+}
 }
 .joazco--admin-navbar {
   display: flex;
@@ -37,8 +47,10 @@
       &:nth-child(2) {
         flex: 2;
         display: flex;
-        h1 {
+         h1 {
           font-size: 1.1rem;
+          color: white;
+          text-decoration: none;
         }
       }
     }
@@ -52,4 +64,16 @@
       color: white;
     }
   }
+}
+
+.admin-table{
+  margin-bottom: 2%;
+  button{
+    margin-bottom: 2%;
+  }
+}
+
+.table-header{
+  font: bold;
+  color: red;
 }
