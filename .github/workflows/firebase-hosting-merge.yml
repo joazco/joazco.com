@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: echo $NEXT_PUBLIC_API_KEY && echo "i'm here!!!" && npm ci && npm run build
+      - run: echo $NEXT_PUBLIC_API_KEY && echo "im here!!!"
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
