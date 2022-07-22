@@ -23,13 +23,13 @@ const ProjectsTable = (props: ProjectsTableProps) => {
   const { onEdit } = props;
 
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} >
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
-          <TableRow>
-            <TableCell align="right">Ordre</TableCell>
-            <TableCell align="right">Titre</TableCell>
-            <TableCell align="right">Action</TableCell>
+          <TableRow className="admin-table-label">
+            <TableCell className="admin-table-label-1" align="right">Ordre</TableCell>
+            <TableCell className="admin-table-label-2" align="right">Titre</TableCell>
+            <TableCell className="admin-table-label-3" align="right">Action</TableCell>
           </TableRow>
         </TableHead>
 

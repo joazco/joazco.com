@@ -15,6 +15,7 @@ const SigninForm = (props: SigninFormProps) => {
     <div className="admin-login">
       <Box
         component="form"
+        className="signin-container"
         sx={{
           "& > :not(style)": { m: 1, width: "25ch" },
         }}
@@ -27,8 +28,8 @@ const SigninForm = (props: SigninFormProps) => {
       >
 
         <Grid container spacing={2}>
-        <div className="input-zone">
-        <img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/images%2Fjoazco_logo_blank_72x72.png?alt=media&token=00e5c472-469e-4683-8653-9205d0417fe5"/>
+        <div className="input-zone-signin">
+        <img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/logo.png?alt=media&token=1f8ac1c5-7a8e-41c6-a624-d3f0fcf01bef"/>
           <Grid item xs={12}>
             <TextField
               id="outlined-basic"

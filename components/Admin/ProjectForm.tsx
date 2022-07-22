@@ -37,7 +37,12 @@ const ProjectForm = (props: ProjectFromProps) => {
           handleSubmit(e);
         }}
       >
-        <Grid container spacing={2}>
+        <Grid container spacing={2} className="input-zone-project">
+        {defaultValue === undefined ? (
+          <h1>Ajouter un nouveau projet</h1>
+              ) : (
+          <h1>Modifier un projet</h1>
+              )}
           <Grid item xs={12}>
             <label>Titre</label>
             <TextField
@@ -98,7 +103,7 @@ const ProjectForm = (props: ProjectFromProps) => {
               onChange={(e) => setOrder(Number(e.target.value))}
             />
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={12} className="button-zone">
             <Button variant="contained" type="submit">
               {defaultValue === undefined ? (
                 <span>Ajouter</span>
