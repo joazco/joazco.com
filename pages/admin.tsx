@@ -23,14 +23,16 @@ const Admin = () => {
   if (connected === undefined) {
     return (
       <Page>
-        <p>Loading...</p>
+        <div className="icone-container">
+        <img className="turn-icone" src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/favicon.ico?alt=media&token=3548ef6e-8dd7-47b2-aaf6-5d27d3c242f0"/>
+        </div>
       </Page>
     );
   }
 
   if (connected) {
     return (
-      <Page>
+      <Page >
         <Grid>
           <Grid item xs={12}>
             <NavBar onClickLogout={() => logOut()} />
@@ -38,7 +40,7 @@ const Admin = () => {
           <Grid item xs={12}>
             <Grid item xs={12}></Grid>
             {!showForm && (
-              <Container>
+              <Container className="admin-table-wrapper">
                 <Grid>
                   <Grid item xs={12}></Grid>
                   <Grid item xs={12}>
