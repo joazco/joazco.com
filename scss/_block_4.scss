@@ -2,9 +2,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 300px;
   article {
     flex-basis: 60%;
     h2 {
+      text-align: center;
+    }
+    p {
+      font-size: 1.1rem;
       text-align: center;
     }
   }
