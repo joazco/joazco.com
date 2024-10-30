@@ -23,13 +23,19 @@ const ProjectsTable = (props: ProjectsTableProps) => {
   const { onEdit } = props;
 
   return (
-    <TableContainer component={Paper} >
+    <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow className="admin-table-label">
-            <TableCell className="admin-table-label-1" align="right">Ordre</TableCell>
-            <TableCell className="admin-table-label-2" align="right">Titre</TableCell>
-            <TableCell className="admin-table-label-3" align="right">Action</TableCell>
+            <TableCell className="admin-table-label-1" align="right">
+              Ordre
+            </TableCell>
+            <TableCell className="admin-table-label-2" align="right">
+              Titre
+            </TableCell>
+            <TableCell className="admin-table-label-3" align="right">
+              Action
+            </TableCell>
           </TableRow>
         </TableHead>
 
@@ -42,9 +48,7 @@ const ProjectsTable = (props: ProjectsTableProps) => {
               <TableCell component="th" scope="row" align="right">
                 {project.order}
               </TableCell>
-              <TableCell align="right" placeholder={project.title}>
-                {project.title}
-              </TableCell>
+              <TableCell align="right">{project.title}</TableCell>
               <TableCell align="right">
                 <IconButton
                   onClick={() => {

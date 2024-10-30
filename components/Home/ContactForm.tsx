@@ -18,7 +18,13 @@ const ContactForm = () => {
     <section className="joazco--block-4" id="contact">
       <article>
         <h2>Nous contacter</h2>
-        <div data-aos="flip-left">
+        <p>
+          Pour nous contacter pour la création d'une application web et/ou
+          mobile, envoyez un mail à l'adresse{" "}
+          <a href="mailto:jazoulay@joazco.com">jazoulay@joazco.com</a> en
+          indiquant le sujet dans l'objet du mail.
+        </p>
+        {/* <div data-aos="flip-left">
           <form id="formContact">
             {showAlert && (
               <div className="form-field alert active">
@@ -74,7 +80,7 @@ const ContactForm = () => {
               </button>
             </div>
           </form>
-        </div>
+        </div> */}
       </article>
     </section>
   );
