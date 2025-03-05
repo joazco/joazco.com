@@ -101,16 +101,24 @@ const DarkBlueDungeon = () => {
           </div>
           <div>
             <p>
-              The data on the DarkBlue Dungeon application is not saved. The
-              collected information will not be communicated to any recipient.
-              If after having contacted our legal department, at the address
-              jazoulay@joazco.com, you note that your rights " Informatic and
-              Liberties " are not respected, you will be able to address a
-              complaint to the National Commission of Data processing and
-              Liberties or CNIL, 3 Places de Fontenoy, 75007 Paris. Note: The
-              information marked with asterisks is mandatory and must be
-              provided. This information is necessary for the provision of
-              services or the conclusion of the contract.
+              The Dark Blue Dungeon application does not itself store or collect
+              any personal data. However, the application uses Google AdMob (a
+              third-party advertising service), which may collect certain
+              information from your device (such as an advertising ID or IP
+              address) in order to display ads. For more information on how
+              AdMob processes data, please consult&nbsp;
+              <a href="https://policies.google.com/privacy">
+                Google’s Privacy Policy
+              </a>
+              .<br />
+              <br /> The collected information is not shared with any other
+              recipient by us. If, after contacting our legal department at the
+              address&nbsp;
+              <a href="mailto:contact@joazco.com">contact@joazco.com</a>, you
+              believe your “Information and Liberties” rights are not being
+              respected, you may lodge a complaint with the French National
+              Commission on Informatics and Liberty (CNIL), located at 3 Place
+              de Fontenoy, 75007 Paris.
             </p>
           </div>
         </div>
