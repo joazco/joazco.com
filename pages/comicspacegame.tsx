@@ -75,7 +75,7 @@ const DarkBlueDungeon = () => {
             <h1>Comic Space Game</h1>
           </div>
           <div>
-            <h2>Commitment of confidentiality</h2>
+            <h2>Privacy Policy</h2>
           </div>
           <div>
             <p>
