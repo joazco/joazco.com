@@ -1,35 +1,337 @@
-.darkbluedungeon-main {
-  background-color: #080a0d;
-  color: white;
-  min-height: 100vh;
-  .darkbluedungeon-container {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 10px;
-    > div {
-      width: 100%;
-      max-width: 1500px;
+/* IMPORT & VAR */
+@font-face {
+  font-family: 'Alagard';
+  src: url('/fonts/alagard_by_pix3m-d6awiwp.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
-      &:nth-child(1) {
-        img {
-          width: 100%;
-          object-fit: contain;
-        }
-        margin-bottom: 10px;
+@font-face {
+  font-family: 'Vinque';
+  src: url('/fonts/Vinque Rg.otf');
+  font-style: normal;
+  font-display: swap;
+}
+
+$font-alagard: 'Alagard', sans-serif;
+$font-vinque: 'Vinque', sans-serif;
+$color-blue: #394B88;
+
+h2{
+  font-family: $font-vinque;
+  font-size: 64px;
+  color: #f2c300;
+}
+h3{
+  font-family: $font-vinque;
+  font-size: 40px;
+}
+
+.darkbluedungeon-main {
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  background-color: black;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+
+.dbd-header {
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+
+  .dbd-head{
+    height: 50vh;
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FBANNIERE-HEAD.png?alt=media&token=049f97fb-9636-4b0a-9d10-beb8622adb0f'); 
+    background-size: cover;
+    background-position: center;
+      padding: 10% 8%;
+
+
+  }
+  .dbd-logo img {
+    max-width: 40%;
+    margin: 0 auto 2rem;
+  }
+
+  .dbd-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 1rem;
+
+    .dbd-btn {
+min-width: 250px;
+      padding: 1rem 2rem;
+      background-color: #394B88;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-family: $font-vinque;
+      font-size: 32px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: all 0.3s;
+      &:hover{
+        min-width: 260Px;
+        background-color: darken($color-blue, 20%);
+      }
+      &-white{
+        background-color: #ffffff;
+        color: #394B88;
+              &:hover{
+    color: #fff;
+      }
       }
     }
-    h1,
-    h2,
-    p {
-      margin: 4px 0;
+  }
+}
+
+/* ABOUT SECTION */
+
+.dbd-about{
+  display: flex;
+justify-content: center;
+padding: 10% 8%;
+  &-container{
+    padding: 0 5rem;
+    border-radius: 20px;
+    max-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #102049 0%, #22376C 100%);
+  gap: 5rem;
+  }
+}
+
+
+  .dbd-about-mockup img {
+    max-width: 250px;
+    border-radius: 12px;
+       transition: all 0.3s;
+      &:hover{
+    margin-bottom: 10px;
+      }
+  }
+
+  .dbd-about-text {
+    max-width: 500px;
+    text-align: left;
+
+    h2 {
+   
+      font-size: 2rem;
+      margin-bottom: 1rem;
     }
+
     p {
       font-size: 1rem;
+      font-family: $font-alagard;
     }
   }
-  &.comic-space-game {
-    background-color: #31284f;
+
+
+/* GAMEPLAY FEATURES */
+
+.dbd-gameplay {
+background: 
+  url('https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2Fbackground%20footer.png?alt=media&token=59837cc8-4cb6-4de7-8b13-a73d64b30fad'),
+  linear-gradient(180deg, #1C1F49 0%, #213864 40%, #192B5B 100%);
+    background-size: contain;
+  background-position: bottom;
+  background-repeat: no-repeat;
+overflow: hidden;
+position: relative;
+  &-container{
+      background-image: url('https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2Fbackgroundgameplay.png?alt=media&token=56d1d290-6c51-49e0-b42f-70484498dc1f');
+ background-position: top;
+ background-size: contain;
+ background-repeat: no-repeat;
+  padding: 10rem 8rem 4rem 8rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+justify-content: center;
+align-items: center;
+
+  }
+
+  &-charac{
+    position: absolute;
+
+    &.manboar{
+      right: 0;
+    }
+  }
+
+  h3 {
+    font-size: 2rem;
+    color: #f2c300;
+    margin-bottom: 3rem;
+  }
+
+  .dbd-feature-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 6rem;
+    width: 100%;
+
+    .feature {
+      max-width: 350px;
+&-mockup{
+  position: relative;
+           transition: all 0.3s;
+           bottom: 0;
+        &:hover{
+  bottom: 10px;
+      }
+}
+      p {
+        color: FFDB0A;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+
+      img {
+        width: 100%;
+        border-radius: 12px;
+ 
+
+      }
+    }
+  }
+
+  .dbd-store-links{
+display: flex;
+align-items: center;
+   img {
+    width: 200px;
+    margin: 0 0.5rem;
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+}
+
+/* STEAM SECTION */
+
+.dbd-steam {
+  margin: 6rem 0;
+
+  h2 {
+    color: #f2c300;
+    margin-bottom: 2rem;
+  }
+
+  .steam-mockup img {
+  
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+
+  .steam-btn img {
+    width: 200px;
+       transition: transform 0.2s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+/* PLOT SECTION */
+
+.dbd-plot {
+    width: 70%;
+background-color: black;
+  padding: 4rem 2rem;
+  text-align: center;
+border: 1px solid white;
+border-radius: 20px;
+  padding: 4rem 4rem;
+  margin: 0 auto;
+  text-align: center;
+
+  h2 {
+    color: #f2c300;
+    margin-bottom: 2rem;
+  }
+
+  &-text {
+    text-align: left;
+    font-size: 25px;
+    line-height: 1.8;
+    font-family: $font-alagard;
+  }
+}
+
+/* DOWNLOAD SECTION */
+
+.dbd-download {
+  text-align: center;
+  padding: 4rem 2rem;
+
+  h2 {
+    color: #f2c300;
+    margin-bottom: 2rem;
+  }
+
+  .dbd-store-links img {
+    width: 200px;
+    margin: 0 0.5rem;
+  }
+}
+
+/* TERMS */
+
+.dbd-terms {
+  font-size: 0.85rem;
+  padding: 10%;
+  margin: 0 auto;
+  text-align: center;
+p{
+  font-family: $font-alagard;
+  font-size: 20px;
+}
+  a {
+    color: #5fa8f5;
+    text-decoration: underline;
+  }
+}
+
+/* FOOTER */
+
+.dbd-footer {
+  background-color: black;
+  padding: 2rem;
+  text-align: center;
+  justify-content: center;
+align-items: center;
+  .footer-icons img {
+    width: 24px;
+    margin: 0 0.5rem;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .footer-copy {
+    font-family: $font-alagard;
+    font-size: 0.75rem;
+    color: #fff;
   }
 }

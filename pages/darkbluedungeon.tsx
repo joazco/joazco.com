@@ -1,5 +1,9 @@
 import HeadNext from "next/head";
 import Image from "next/image";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { Typewriter } from 'react-simple-typewriter';
 
 const Head = () => {
   return (
@@ -61,68 +65,158 @@ const Head = () => {
       />
       <script src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/jquery-3.6.0.min.js?alt=media&token=4300d217-bc88-46f5-a036-0ce7328fab83"></script>
       <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-      {/* <script src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/scripts%2Fcontact.js?alt=media&token=a6b0648d-c1cc-4cb3-b3fc-a372bbd60ad8"></script>
-          <script src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/scripts%2Fheader.js?alt=media&token=fd58509f-5e61-4d7b-8057-787e7ef9b7c9"></script>
-          <script src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/scripts%2Fscroll.js?alt=media&token=472fc365-9bbe-4619-8c4f-ca89e80bbd85"></script> */}
-      {/* <script src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/scripts%2Fscript.js?alt=media&token=3ef84ccf-286a-440a-9850-f00512d65489"></script> */}
-      {/* <script>
-            $(function (){" "}
-            {setTimeout(() => {
-              console.log("i'm here");
-              SCROLL.init();
-              HEADER.init();
-              CONTACT.init();
-              AOS.init();
-            }, 3000)}
-            );
-          </script> */}
     </HeadNext>
   );
 };
 
 const DarkBlueDungeon = () => {
+ useEffect(() => {
+    AOS.init({
+      once: true, // ne s'active qu'une fois
+    });
+  }, []);
   return (
+    
     <>
       <Head></Head>
-      <main className="darkbluedungeon-main">
-        <div className="darkbluedungeon-container">
-          <div>
-            <img
-              src={
-                "https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/images%2FBANNIERE-TWITTER.png?alt=media&token=e5fd95c2-35b2-4f34-9b47-4a7cc006463f"
-              }
-            />
-          </div>
-          <div>
-            <h1>Dark Blue Dungeon</h1>
-          </div>
-          <div>
-            <h2>Commitment of confidentiality</h2>
-          </div>
-          <div>
-            <p>
-              The Dark Blue Dungeon application does not itself store or collect
-              any personal data. However, the application uses Google AdMob (a
-              third-party advertising service), which may collect certain
-              information from your device (such as an advertising ID or IP
-              address) in order to display ads. For more information on how
-              AdMob processes data, please consult&nbsp;
-              <a href="https://policies.google.com/privacy">
-                Google’s Privacy Policy
-              </a>
-              .<br />
-              <br /> The collected information is not shared with any other
-              recipient by us. If, after contacting our legal department at the
-              address&nbsp;
-              <a href="mailto:contact@joazco.com">contact@joazco.com</a>, you
-              believe your “Information and Liberties” rights are not being
-              respected, you may lodge a complaint with the French National
-              Commission on Informatics and Liberty (CNIL), located at 3 Place
-              de Fontenoy, 75007 Paris.
-            </p>
-          </div>
-        </div>
-      </main>
+    <main className="darkbluedungeon-main">
+
+  {/* HEADER */}
+  <header className="dbd-header">
+   <div className="dbd-head">
+    <div className="dbd-logo">
+      <img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2Fheader-logo.png?alt=media&token=10fb4496-b872-4517-a418-83c3ad72eaa5" alt="Dark Blue Dungeon logo" />
+    </div>
+    <div className="dbd-buttons">
+      <a href="#" className="dbd-btn dbd-btn-white">Download</a>
+      <a href="#" className="dbd-btn">Watch Trailer</a>
+    </div>
+    </div>
+    <div className="dbd-about">
+      <div className="dbd-about-container">
+      <div className="dbd-about-mockup">
+      <img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2Fmockup%20about.png?alt=media&token=6639d806-f3ec-4927-8594-3a456315faa8" alt="Game Mockup" />
+     </div>
+      <div className="dbd-about-text">
+      <h2>About the game</h2>
+      <p>
+        Dark Blue Dungeon is a text-based turn-based combat RPG. A dangerous quest is waiting for you,
+        in which only your choices will allow you to open up a path to the final battle.
+        Many ordeals will punctuate your road: combats, riddles, mini-games. Your main asset will be your thinking.
+      </p>
+      </div>
+      </div>
+   </div>
+  </header>
+
+  {/* ABOUT THE GAME */}
+
+
+  {/* GAMEPLAY FEATURES */}
+  <section className="dbd-gameplay">
+            <img className="dbd-gameplay-charac human"    data-aos="fade-right"
+    data-aos-duration="1000" src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2Fhuman%20(1)%201.png?alt=media&token=821da498-893c-4830-b940-3957684a9dd1" alt="Preparation screen" />
+        <img className="dbd-gameplay-charac manboar"    data-aos="fade-left"
+    data-aos-duration="1000"src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2Fmanboar%201.png?alt=media&token=e1074e75-71c5-440a-9db5-dd94dc4d8773" alt="Preparation screen" />
+
+<div className="dbd-gameplay-container">
+    <h2>Gameplay Features</h2>
+    <div className="dbd-feature-cards">
+      <div className="feature">
+        <h3>Be prepared</h3>
+        <img className="feature-mockup" src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FBePrepared.png?alt=media&token=59add72d-6bd3-4ba1-9a1f-ae34193d3dd6" alt="Preparation screen" />
+      </div>
+      <div className="feature">
+        <h3>Explore</h3>
+        <img className="feature-mockup" src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FExplore.png?alt=media&token=8c2d4c93-5b07-4bcf-9e9d-6fc8a7a49949" alt="Exploration screen" />
+      </div>
+      <div className="feature">
+        <h3>Fight</h3>
+        <img className="feature-mockup" src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FFight.png?alt=media&token=aebf180b-16b1-4125-9067-3d6271d4f55d" alt="Combat screen" />
+      </div>
+    </div>
+    <div className="dbd-store-links">
+       <a href="#"><img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FAPP%20STORE%20button.png?alt=media&token=49e96624-ebdf-4891-95c8-3f67b2fb4512" alt="App Store" /></a>
+      <a href="#"><img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FGOOGLE%20PLAY%20button.png?alt=media&token=a85bc237-797a-4535-a3b2-8f28c5d9186f" alt="Google Play" /></a>
+    </div>
+
+    
+    {/* ALSO AVAILABLE ON STEAM */}
+  <div className="dbd-steam">
+    <h2>Also available on Steam</h2>
+    <div className="steam-mockup">
+      <img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FScreen.png?alt=media&token=341157ad-6778-4634-875a-29b2ed7d2e04" alt="Steam mockup" />
+    </div>
+    <div className="steam-btn">
+      <a href="#"><img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FSTEAM%20button.png?alt=media&token=c8070be8-82c3-4f5e-be29-84e019eaa006" alt="Steam Button" /></a>
+    </div>
+  </div>
+
+  {/* PLOT */}
+  <div className="dbd-plot">
+    <h2>PLOT</h2>
+   <p className="dbd-plot-text typing-text">
+      <Typewriter
+        words={[
+          `Two rival kingdoms' fragile peace shatters when legendary amulets are discovered.
+
+The smallest kingdom, seemingly doomed, turns the tide by harnessing the amulets' mysterious power. It triumphs, and its king becomes world ruler — until betrayal leads to his fall.
+
+The amulets vanish. Who stole them? Adventurers embark on a perilous quest: will they meet a futile death or claim ultimate power? An enigmatic figure gives you a mission: defeat the dragon that took his dungeon.`
+        ]}
+        cursor
+        typeSpeed={30}
+        cursorStyle="|"
+      />
+    </p>
+  </div>
+
+  {/* DOWNLOAD */}
+  <div className="dbd-download">
+    <h2>Download</h2>
+    <div className="dbd-store-links">
+      <img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FGOOGLE%20PLAY%20button.png?alt=media&token=a85bc237-797a-4535-a3b2-8f28c5d9186f" alt="Google Play" />
+      <img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FAPP%20STORE%20button.png?alt=media&token=49e96624-ebdf-4891-95c8-3f67b2fb4512" alt="App Store" />
+      <img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FSTEAM%20button.png?alt=media&token=c8070be8-82c3-4f5e-be29-84e019eaa006" alt="Steam" />
+    </div>
+  </div>
+
+  {/* TERMS */}
+  <div className="dbd-terms">
+    <p>Commitment of confidentiality</p>
+    <p>
+      The Dark Blue Dungeon application does not itself store or collect any personal data.
+      However, the application uses Google AdMob (a third-party advertising service),
+      which may collect certain information from your device (such as advertising ID or IP address)
+      to display ads. For more information on how AdMob processes data, please consult
+      <a href="https://policies.google.com/privacy"> Google’s Privacy Policy</a>.
+    </p>
+    <p>
+      The collected information is not shared with any other recipient by us. If, after contacting our legal
+      department at <a href="mailto:contact@joazco.com">contact@joazco.com</a>,
+      you believe your rights are not respected, you may lodge a complaint with the CNIL (France).
+    </p>
+  </div>
+  </div>
+  </section>
+
+  
+
+
+  {/* FOOTER */}
+  <footer className="dbd-footer">
+    <div className="footer-icons">
+      <img src="/path/to/icon-facebook.svg" alt="Facebook" />
+      <img src="/path/to/icon-twitter.svg" alt="Twitter" />
+      <img src="/path/to/icon-instagram.svg" alt="Instagram" />
+    </div>
+    <div className="footer-copy">
+      <p>© Joazco. All rights reserved. 2025</p>
+    </div>
+  </footer>
+
+</main>
+
     </>
   );
 };
