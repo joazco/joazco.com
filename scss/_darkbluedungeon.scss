@@ -1,4 +1,7 @@
+
 /* IMPORT & VAR */
+
+
 @font-face {
   font-family: 'Alagard';
   src: url('/fonts/alagard_by_pix3m-d6awiwp.ttf') format('truetype');
@@ -17,6 +20,11 @@
 $font-alagard: 'Alagard', sans-serif;
 $font-vinque: 'Vinque', sans-serif;
 $color-blue: #394B88;
+$bp: 1300px;
+$bp-sm: 768px;
+
+
+.darkbluedungeon-main{
 
 h2{
   font-family: $font-vinque;
@@ -51,12 +59,19 @@ h3{
     background-size: cover;
     background-position: center;
       padding: 10% 8%;
-
+ @media (max-width: $bp-sm) {
+height: 80vh;
+padding-top: 8rem;
+      }
 
   }
   .dbd-logo img {
     max-width: 40%;
     margin: 0 auto 2rem;
+      @media (max-width: $bp) {
+max-width: 60%;
+      }
+    
   }
 
   .dbd-buttons {
@@ -64,7 +79,9 @@ h3{
     justify-content: center;
     gap: 3rem;
     margin-top: 1rem;
-
+   @media (max-width: $bp-sm) {
+flex-direction: column;
+      }
     .dbd-btn {
 min-width: 250px;
       padding: 1rem 2rem;
@@ -99,6 +116,7 @@ min-width: 250px;
   display: flex;
 justify-content: center;
 padding: 10% 8%;
+background-color: #000;
   &-container{
     padding: 0 5rem;
     border-radius: 20px;
@@ -108,6 +126,17 @@ padding: 10% 8%;
   justify-content: center;
   background: linear-gradient(180deg, #102049 0%, #22376C 100%);
   gap: 5rem;
+   @media (max-width: $bp) {
+    padding: 2rem 5rem;
+    gap: 2rem;
+    
+      }
+         @media (max-width: $bp-sm) {
+max-height: 100%;
+flex-direction: column;
+    padding: 5rem 5rem;
+    gap: 2rem;
+      }
   }
 }
 
@@ -124,7 +153,10 @@ padding: 10% 8%;
   .dbd-about-text {
     max-width: 500px;
     text-align: left;
-
+color: #FFF;
+  @media (max-width: $bp-sm) {
+text-align: center;
+      }
     h2 {
    
       font-size: 2rem;
@@ -160,15 +192,22 @@ position: relative;
   flex-direction: column;
 justify-content: center;
 align-items: center;
+ @media (max-width: $bp-sm) {
+  padding: 5rem 4rem 4rem 4rem;
+      }
 
   }
 
   &-charac{
     position: absolute;
-
+ @media (max-width: 1220px) {
+display: none;
+      }
     &.manboar{
+       
       right: 0;
     }
+
   }
 
   h3 {
@@ -212,6 +251,10 @@ align-items: center;
   .dbd-store-links{
 display: flex;
 align-items: center;
+ @media (max-width: $bp-sm) {
+flex-direction: column;
+gap: 2rem;
+      }
    img {
     width: 200px;
     margin: 0 0.5rem;
@@ -255,14 +298,16 @@ align-items: center;
 .dbd-plot {
     width: 70%;
 background-color: black;
-  padding: 4rem 2rem;
   text-align: center;
 border: 1px solid white;
 border-radius: 20px;
   padding: 4rem 4rem;
   margin: 0 auto;
   text-align: center;
-
+ @media (max-width: $bp-sm) {
+padding: 2rem 2rem;
+width: unset;
+      }
   h2 {
     color: #f2c300;
     margin-bottom: 2rem;
@@ -270,6 +315,7 @@ border-radius: 20px;
 
   &-text {
     text-align: left;
+    color: #fff;
     font-size: 25px;
     line-height: 1.8;
     font-family: $font-alagard;
@@ -303,6 +349,7 @@ border-radius: 20px;
 p{
   font-family: $font-alagard;
   font-size: 20px;
+  color: #fff;
 }
   a {
     color: #5fa8f5;
@@ -318,12 +365,16 @@ p{
   text-align: center;
   justify-content: center;
 align-items: center;
+gap: 3rem;
+
+.footer-icons{
+  display: flex;
+  gap: 1rem;
+}
   .footer-icons img {
-    width: 24px;
     margin: 0 0.5rem;
     opacity: 0.8;
     transition: opacity 0.2s;
-
     &:hover {
       opacity: 1;
     }
@@ -331,7 +382,9 @@ align-items: center;
 
   .footer-copy {
     font-family: $font-alagard;
-    font-size: 0.75rem;
+    font-size: 1rem;
     color: #fff;
   }
+}
+
 }

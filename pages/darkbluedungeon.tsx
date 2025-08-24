@@ -1,5 +1,4 @@
 import HeadNext from "next/head";
-import Image from "next/image";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -53,9 +52,6 @@ const Head = () => {
         content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
       />
       <meta name="theme-color" content="#00468b" />
-
-      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
       <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
@@ -64,7 +60,6 @@ const Head = () => {
         referrerPolicy="no-referrer"
       />
       <script src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/jquery-3.6.0.min.js?alt=media&token=4300d217-bc88-46f5-a036-0ce7328fab83"></script>
-      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     </HeadNext>
   );
 };
@@ -72,24 +67,24 @@ const Head = () => {
 const DarkBlueDungeon = () => {
  useEffect(() => {
     AOS.init({
-      once: true, // ne s'active qu'une fois
+      once: true,
     });
+    AOS.refresh();
   }, []);
   return (
     
     <>
-      <Head></Head>
-    <main className="darkbluedungeon-main">
-
+  <Head></Head>
+  <main className="darkbluedungeon-main">
   {/* HEADER */}
   <header className="dbd-header">
    <div className="dbd-head">
     <div className="dbd-logo">
-      <img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2Fheader-logo.png?alt=media&token=10fb4496-b872-4517-a418-83c3ad72eaa5" alt="Dark Blue Dungeon logo" />
+      <img data-aos="fade" data-aos-duration="2000" src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2Fheader-logo.png?alt=media&token=10fb4496-b872-4517-a418-83c3ad72eaa5" alt="Dark Blue Dungeon logo" />
     </div>
     <div className="dbd-buttons">
-      <a href="#" className="dbd-btn dbd-btn-white">Download</a>
-      <a href="#" className="dbd-btn">Watch Trailer</a>
+      <a data-aos="fade-right" data-aos-duration="3000" href="#" className="dbd-btn dbd-btn-white">Download</a>
+      <a data-aos="fade-left" data-aos-duration="3000" href="#" className="dbd-btn">Watch Trailer</a>
     </div>
     </div>
     <div className="dbd-about">
@@ -206,9 +201,9 @@ The amulets vanish. Who stole them? Adventurers embark on a perilous quest: will
   {/* FOOTER */}
   <footer className="dbd-footer">
     <div className="footer-icons">
-      <img src="/path/to/icon-facebook.svg" alt="Facebook" />
-      <img src="/path/to/icon-twitter.svg" alt="Twitter" />
-      <img src="/path/to/icon-instagram.svg" alt="Instagram" />
+      <a href="/"><img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2Fdiscord.png?alt=media&token=47ea2ee0-cf97-4f62-9702-b97a4ec9bd47" alt="Discord" /></a>
+      <a href="/"><img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2Fx.png?alt=media&token=bb180ab8-196b-4875-bb42-cb0e88f13d83" alt="X" /></a>
+      <a href="/"><img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2Fspotify.png?alt=media&token=1d2127b0-e15f-443f-bfb7-69871a480dae" alt="spotify" /></a>
     </div>
     <div className="footer-copy">
       <p>© Joazco. All rights reserved. 2025</p>
