@@ -83,8 +83,8 @@ const DarkBlueDungeon = () => {
       <img data-aos="fade" data-aos-duration="2000" src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2Fheader-logo.png?alt=media&token=10fb4496-b872-4517-a418-83c3ad72eaa5" alt="Dark Blue Dungeon logo" />
     </div>
     <div className="dbd-buttons">
-      <a data-aos="fade-right" data-aos-duration="3000" href="#" className="dbd-btn dbd-btn-white">Download</a>
-      <a data-aos="fade-left" data-aos-duration="3000" href="#" className="dbd-btn">Watch Trailer</a>
+      <a data-aos="fade-right" data-aos-duration="3000" href="#dbd-download" className="dbd-btn dbd-btn-white">Download</a>
+      <a data-aos="fade-left" data-aos-duration="3000" href="https://www.youtube.com/watch?v=jD73dDB4Sl8" target="_blank" className="dbd-btn">Watch Trailer</a>
     </div>
     </div>
     <div className="dbd-about">
@@ -131,8 +131,8 @@ const DarkBlueDungeon = () => {
       </div>
     </div>
     <div className="dbd-store-links">
-       <a href="#"><img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FAPP%20STORE%20button.png?alt=media&token=49e96624-ebdf-4891-95c8-3f67b2fb4512" alt="App Store" /></a>
-      <a href="#"><img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FGOOGLE%20PLAY%20button.png?alt=media&token=a85bc237-797a-4535-a3b2-8f28c5d9186f" alt="Google Play" /></a>
+       <a target="_blank" href="https://apps.apple.com/au/app/dark-blue-dungeon/id1604755796"><img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FAPP%20STORE%20button.png?alt=media&token=49e96624-ebdf-4891-95c8-3f67b2fb4512" alt="App Store" /></a>
+      <a target="_blank" href="https://play.google.com/store/apps/details?id=com.joazco.darkbluedonjon&hl=fr"><img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FGOOGLE%20PLAY%20button.png?alt=media&token=a85bc237-797a-4535-a3b2-8f28c5d9186f" alt="Google Play" /></a>
     </div>
 
     
@@ -143,7 +143,7 @@ const DarkBlueDungeon = () => {
       <img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FScreen.png?alt=media&token=341157ad-6778-4634-875a-29b2ed7d2e04" alt="Steam mockup" />
     </div>
     <div className="steam-btn">
-      <a href="#"><img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FSTEAM%20button.png?alt=media&token=c8070be8-82c3-4f5e-be29-84e019eaa006" alt="Steam Button" /></a>
+      <a href="#" target="_blank"><img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FSTEAM%20button.png?alt=media&token=c8070be8-82c3-4f5e-be29-84e019eaa006" alt="Steam Button" /></a>
     </div>
   </div>
 
@@ -167,12 +167,12 @@ The amulets vanish. Who stole them? Adventurers embark on a perilous quest: will
   </div>
 
   {/* DOWNLOAD */}
-  <div className="dbd-download">
+  <div className="dbd-download" id="dbd-download">
     <h2>Download</h2>
     <div className="dbd-store-links">
-      <img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FGOOGLE%20PLAY%20button.png?alt=media&token=a85bc237-797a-4535-a3b2-8f28c5d9186f" alt="Google Play" />
-      <img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FAPP%20STORE%20button.png?alt=media&token=49e96624-ebdf-4891-95c8-3f67b2fb4512" alt="App Store" />
-      <img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FSTEAM%20button.png?alt=media&token=c8070be8-82c3-4f5e-be29-84e019eaa006" alt="Steam" />
+            <a target="_blank" href="https://play.google.com/store/apps/details?id=com.joazco.darkbluedonjon&hl=fr"><img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FGOOGLE%20PLAY%20button.png?alt=media&token=a85bc237-797a-4535-a3b2-8f28c5d9186f" alt="Google Play" /></a>
+            <a target="_blank" href="https://apps.apple.com/au/app/dark-blue-dungeon/id1604755796"><img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FAPP%20STORE%20button.png?alt=media&token=49e96624-ebdf-4891-95c8-3f67b2fb4512" alt="App Store" /></a>
+            <a target="_blank" href="https://store.steampowered.com/app/3119460/Dark_Blue_Dungeon/"><img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FSTEAM%20button.png?alt=media&token=c8070be8-82c3-4f5e-be29-84e019eaa006" alt="Steam" /></a>
     </div>
   </div>
 
@@ -201,9 +201,9 @@ The amulets vanish. Who stole them? Adventurers embark on a perilous quest: will
   {/* FOOTER */}
   <footer className="dbd-footer">
     <div className="footer-icons">
-      <a href="/"><img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2Fdiscord.png?alt=media&token=47ea2ee0-cf97-4f62-9702-b97a4ec9bd47" alt="Discord" /></a>
-      <a href="/"><img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2Fx.png?alt=media&token=bb180ab8-196b-4875-bb42-cb0e88f13d83" alt="X" /></a>
-      <a href="/"><img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2Fspotify.png?alt=media&token=1d2127b0-e15f-443f-bfb7-69871a480dae" alt="spotify" /></a>
+      <a target="_blank" href="/"><img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2Fdiscord.png?alt=media&token=47ea2ee0-cf97-4f62-9702-b97a4ec9bd47" alt="Discord" /></a>
+      <a target="_blank" href="https://x.com/DarkblueDungeon"><img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2Fx.png?alt=media&token=bb180ab8-196b-4875-bb42-cb0e88f13d83" alt="X" /></a>
+      <a target="_blank" href="https://open.spotify.com/intl-fr/artist/3kW59ZhiqZDr482PHNJbAh"><img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2Fspotify.png?alt=media&token=1d2127b0-e15f-443f-bfb7-69871a480dae" alt="spotify" /></a>
     </div>
     <div className="footer-copy">
       <p>© Joazco. All rights reserved. 2025</p>
