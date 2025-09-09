@@ -33,6 +33,8 @@ $color-link: #5fa8f5;
 
 $bp: 1300px;
 $bp-sm: 768px;
+$bp-1440: 1440px;
+$bp-1080: 1080px;
 
 body.darkbluedungeon-page,
 html.darkbluedungeon-page {
@@ -51,11 +53,16 @@ html.darkbluedungeon-page {
     font-family: $font-vinque;
     font-size: 64px;
     color: $color-yellow;
+
+    @media (max-width: $bp-sm) {
+    font-size: 45px;
+    }
   }
 
   h3 {
     font-family: $font-vinque;
     font-size: 40px;
+    font-style: italic;
   }
 }
 
@@ -113,9 +120,10 @@ html.darkbluedungeon-page {
       border-radius: 5px;
       text-decoration: none;
       transition: all 0.3s;
-
+      transition-duration: 0.3s !important;
+cursor: pointer;
       &:hover {
-        min-width: 260px;
+        min-width: 280px;
         background-color: $color-blue-dark;
       }
 
@@ -216,31 +224,45 @@ html.darkbluedungeon-page {
     align-items: center;
 
     @media (max-width: $bp-sm) {
-      padding: 5rem 4rem 4rem 4rem;
+      padding: 5rem 3rem 4rem 3rem;
     }
   }
 
   &-charac {
     position: absolute;
 
-    @media (max-width: 1220px) {
+    @media (max-width: $bp-1080) {
       display: none;
     }
     &.human{
-      left: -24em;
-      top: -24em;
+      left: -20em;
+      top: -20em;
       width: 30%;
+      @media (max-width: $bp-1440) {
+     left: -15em;
+      top: -8em;
+        width: 35%;
+}
+
     }
 
     &.manboar {
       top: 104em;
       right: -20em;
       width: 30%;
+          @media (max-width: $bp-1440) {
+     right: -14em;
+        width: 35%;
+}
     }
      &.nebe {
-      left: -20em;
-      bottom: 140em;
+      left: -10em;
+      top: 220em;
       width: 25%;
+        @media (max-width: $bp-1440) {
+    left: -16em;
+        width: 32%;
+}
     }
   }
 
@@ -345,6 +367,10 @@ html.darkbluedungeon-page {
   h2 {
     color: $color-yellow;
     margin-bottom: 2rem;
+
+    @media (max-width: $bp-sm) {
+ margin: 1rem;
+    }
   }
 
   &-text {
@@ -353,6 +379,10 @@ html.darkbluedungeon-page {
     font-size: 25px;
     line-height: 1.8;
     font-family: $font-alagard;
+    @media (max-width: $bp-sm) {
+font-size: 22px;
+line-height: 1.8em;
+    }
   }
 }
 
@@ -462,6 +492,9 @@ html.darkbluedungeon-page {
 .video-container {
   width: 100%;
   height: 100%;
+  iframe{
+    border: none;
+  }
 }
 
 .sr-only {

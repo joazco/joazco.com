@@ -59,10 +59,10 @@ const DarkBlueDungeon = () => {
       <img data-aos="fade" data-aos-duration="2000" src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2Fheader-logo.png?alt=media&token=10fb4496-b872-4517-a418-83c3ad72eaa5" alt="Dark Blue Dungeon logo" />
     </div>
     <div className="dbd-buttons">
-      <a data-aos="fade-right" data-aos-duration="3000" href="#dbd-download" className="dbd-btn dbd-btn-white">Download</a>
+      <a data-aos="fade-right" data-aos-duration="1000" href="#dbd-download" className="dbd-btn dbd-btn-white">Download</a>
    <button
                 data-aos="fade-left"
-                data-aos-duration="3000"
+                data-aos-duration="1000"
                 onClick={() => setTrailerOpen(true)}
                 className="dbd-btn"
               >
@@ -72,7 +72,7 @@ const DarkBlueDungeon = () => {
     <div className="dbd-about">
       <div className="dbd-about-container">
       <div className="dbd-about-mockup">
-      <img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2Fmockup%20about.png?alt=media&token=6639d806-f3ec-4927-8594-3a456315faa8" alt="Game Mockup" />
+      <img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FAboutgame.png?alt=media&token=a36554fb-42ca-4111-a4bc-4ec5744a09c4" alt="Game Mockup" />
      </div>
       <div className="dbd-about-text">
       <h2>About the game</h2>
@@ -99,9 +99,9 @@ const DarkBlueDungeon = () => {
               <div className="video-container">
                 <iframe
                 width="100%"
-                height="100%"
+                height="100%"  
                 loading="lazy"
-                src="https://www.youtube.com/embed/0NkMjXpjPks?autoplay=1"
+                 src="https://www.youtube.com/embed/pAa7P52w9yk?autoplay=1"
                 title="Dark Blue Dungeon Trailer"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
@@ -146,15 +146,14 @@ const DarkBlueDungeon = () => {
       <img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FScreen.png?alt=media&token=341157ad-6778-4634-875a-29b2ed7d2e04" alt="Steam mockup" />
     </div>
     <div className="steam-btn">
-      <a href="#" target="_blank"><img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FSTEAM%20button.png?alt=media&token=c8070be8-82c3-4f5e-be29-84e019eaa006" alt="Steam Button" /></a>
+      <a href="https://store.steampowered.com/app/3119460/Dark_Blue_Dungeon/" target="_blank"><img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FSTEAM%20button.png?alt=media&token=c8070be8-82c3-4f5e-be29-84e019eaa006" alt="Steam Button" /></a>
     </div>
   </div>
+     <img className="dbd-gameplay-charac nebe"    data-aos="fade-left"
+    data-aos-duration="1000"src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FNEBE.gif?alt=media&token=e506d6ed-32ff-4fe8-a0af-0f998e2a7fc5" alt="Preparation screen" />
 
   {/* PLOT */}
   <div className="dbd-plot">
-      <img className="dbd-gameplay-charac nebe"    data-aos="fade-left"
-    data-aos-duration="1000"src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FNEBE.gif?alt=media&token=e506d6ed-32ff-4fe8-a0af-0f998e2a7fc5" alt="Preparation screen" />
-
     <h2>Plot</h2>
    <p className="dbd-plot-text typing-text">
       <Typewriter
@@ -207,7 +206,7 @@ The amulets vanish. Who stole them? Adventurers embark on a perilous quest: will
   {/* FOOTER */}
   <footer className="dbd-footer">
     <div className="footer-icons">
-      <a target="_blank" rel="noopener noreferrer" href="/"><img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2Fdiscord.png?alt=media&token=47ea2ee0-cf97-4f62-9702-b97a4ec9bd47" alt="Discord" /></a>
+      <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/H8b36mdzgn"><img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2Fdiscord.png?alt=media&token=47ea2ee0-cf97-4f62-9702-b97a4ec9bd47" alt="Discord" /></a>
       <a target="_blank" rel="noopener noreferrer" href="https://x.com/DarkblueDungeon"><img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2Fx.png?alt=media&token=bb180ab8-196b-4875-bb42-cb0e88f13d83" alt="X" /></a>
       <a target="_blank" rel="noopener noreferrer" href="https://open.spotify.com/intl-fr/artist/3kW59ZhiqZDr482PHNJbAh"><img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2Fspotify.png?alt=media&token=1d2127b0-e15f-443f-bfb7-69871a480dae" alt="spotify" /></a>
     </div>
