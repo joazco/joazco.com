@@ -33,6 +33,7 @@ $color-link: #5fa8f5;
 
 $bp: 1300px;
 $bp-sm: 768px;
+$bp-1680: 1690px;
 $bp-1440: 1440px;
 $bp-1080: 1080px;
 
@@ -238,6 +239,10 @@ cursor: pointer;
       left: -20em;
       top: -20em;
       width: 30%;
+         @media (max-width: $bp-1680) {
+    width: 35%;
+    left: -18em;
+    }
       @media (max-width: $bp-1440) {
      left: -15em;
       top: -8em;
@@ -250,6 +255,10 @@ cursor: pointer;
       top: 104em;
       right: -20em;
       width: 30%;
+        @media (max-width: $bp-1680) {
+    width: 35%;
+    right: -16em;
+    }
           @media (max-width: $bp-1440) {
      right: -14em;
         width: 35%;
@@ -367,6 +376,7 @@ cursor: pointer;
   h2 {
     color: $color-yellow;
     margin-bottom: 2rem;
+    margin-top: 2rem;
 
     @media (max-width: $bp-sm) {
  margin: 1rem;

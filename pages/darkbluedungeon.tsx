@@ -182,7 +182,7 @@ The amulets vanish. Who stole them? Adventurers embark on a perilous quest: will
   </div>
 
   {/* TERMS */}
-  <div className="dbd-terms">
+  <div className="dbd-terms" id="confidentiality">
     <p><a href="#confidentiality">Commitment of confidentiality</a></p>
     <p>
       The Dark Blue Dungeon application does not itself store or collect any personal data.
