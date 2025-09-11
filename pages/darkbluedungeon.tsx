@@ -112,10 +112,10 @@ const DarkBlueDungeon = () => {
         )}
   {/* GAMEPLAY FEATURES */}
   <section className="dbd-gameplay">
-            <img className="dbd-gameplay-charac human"    data-aos="fade-right"
-    data-aos-duration="1000" src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FCHEVALIER.gif?alt=media&token=45e2265f-ac75-4d86-8d70-33e105874566" alt="Preparation screen" />
-        <img className="dbd-gameplay-charac manboar"    data-aos="fade-left"
-    data-aos-duration="1000"src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FORC.gif?alt=media&token=c0605bdf-fb24-4e70-bcd7-f1f14a6aa97a" alt="Preparation screen" />
+            <img className="dbd-gameplay-charac human"
+    src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FCHEVALIER.gif?alt=media&token=45e2265f-ac75-4d86-8d70-33e105874566" alt="human gif" />
+        <img className="dbd-gameplay-charac manboar"
+    src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FORC.gif?alt=media&token=c0605bdf-fb24-4e70-bcd7-f1f14a6aa97a" alt="manboar gif" />
 
 <div className="dbd-gameplay-container">
     <h2>Gameplay Features</h2>
@@ -149,8 +149,8 @@ const DarkBlueDungeon = () => {
       <a href="https://store.steampowered.com/app/3119460/Dark_Blue_Dungeon/" target="_blank"><img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FSTEAM%20button.png?alt=media&token=c8070be8-82c3-4f5e-be29-84e019eaa006" alt="Steam Button" /></a>
     </div>
   </div>
-     <img className="dbd-gameplay-charac nebe"    data-aos="fade-left"
-    data-aos-duration="1000"src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FNEBE.gif?alt=media&token=e506d6ed-32ff-4fe8-a0af-0f998e2a7fc5" alt="Preparation screen" />
+     <img className="dbd-gameplay-charac nebe"
+src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FNEBE.gif?alt=media&token=e506d6ed-32ff-4fe8-a0af-0f998e2a7fc5" alt="Nebe gif" />
 
   {/* PLOT */}
   <div className="dbd-plot">
