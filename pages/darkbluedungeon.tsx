@@ -143,7 +143,7 @@ const DarkBlueDungeon = () => {
   <div className="dbd-steam">
     <h2>Also available on Steam</h2>
     <div className="steam-mockup">
-      <img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FScreen.png?alt=media&token=341157ad-6778-4634-875a-29b2ed7d2e04" alt="Steam mockup" />
+      <img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FScreen.png?alt=media&token=2aa5b417-831c-4066-8eb0-2fad0710b6b6" alt="Steam mockup" />
     </div>
     <div className="steam-btn">
       <a href="https://store.steampowered.com/app/3119460/Dark_Blue_Dungeon/" target="_blank"><img src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FSTEAM%20button.png?alt=media&token=c8070be8-82c3-4f5e-be29-84e019eaa006" alt="Steam Button" /></a>
@@ -158,11 +158,10 @@ src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark
    <p className="dbd-plot-text typing-text">
       <Typewriter
         words={[
-          `Two rival kingdoms' fragile peace shatters when legendary amulets are discovered.
-
-The smallest kingdom, seemingly doomed, turns the tide by harnessing the amulets' mysterious power. It triumphs, and its king becomes world ruler — until betrayal leads to his fall.
-
-The amulets vanish. Who stole them? Adventurers embark on a perilous quest: will they meet a futile death or claim ultimate power? An enigmatic figure gives you a mission: defeat the dragon that took his dungeon.`
+          `Two rival kingdoms' fragile peace shatters when legendary amulets are discovered. The smallest kingdom, seemingly doomed, turns the tide by harnessing the amulets' mysterious power. 
+          It triumphs, and its king becomes world ruler — until betrayal leads to his fall. 
+          The amulets vanish. Who stole them?
+          Dark Blue Dungeon is a text-based turn-based combat RPG. A dangerous quest is waiting for you, in which only your choices will allow you to open up a path to the final battle. Many ordeals will punctuate your road : combats, riddles, mini-games.`
         ]}
         cursor
         typeSpeed={30}
