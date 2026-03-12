@@ -12,9 +12,9 @@ const Menu = () => {
         </div>
         <div className="joazco--header-navbar-right">
           <ul id="joazco--header-navbar-right-links">
-            <li data-target="who">Qui sommes-nous?</li>
-            <li data-target="projects">Nos projets</li>
-            <li data-target="contact">Nous contacter</li>
+            <li data-target="who">Who are we?</li>
+            <li data-target="projects">Our projects</li>
+            <li data-target="contact">Contact us</li>
           </ul>
           <div className="joazco--header-navbar-right-menu">
             <i className="fa-solid fa-bars icon-default"></i>

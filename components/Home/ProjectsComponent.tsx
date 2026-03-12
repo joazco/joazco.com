@@ -22,7 +22,7 @@ const ProjectsComponent = ({ projects }: ProjectsComponentProps) => {
   return (
     <section className="joazco--block-3" id="projects">
       <article>
-        <h2>Nos projets</h2>
+        <h2>Our projects</h2>
         <div className="joazco--block-3-content">
           {_projects.map((project, i) => (
             <div
@@ -37,11 +37,11 @@ const ProjectsComponent = ({ projects }: ProjectsComponentProps) => {
                   <a href={project.link}>
                     <img
                       src={project.image}
-                      alt={`L'image du projet ${project.title}`}
+                      alt={`Project image: ${project.title}`}
                     />
                     <div>
                       <span>
-                        Lien vers {project.link.replace(/(^\w+:|^)\/\//, "")}
+                        Link to {project.link.replace(/(^\w+:|^)\/\//, "")}
                         <i className="fas fa-external-link-alt"></i>
                       </span>
                     </div>

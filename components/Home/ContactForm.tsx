@@ -17,12 +17,11 @@ const ContactForm = () => {
   return (
     <section className="joazco--block-4" id="contact">
       <article>
-        <h2>Nous contacter</h2>
+        <h2>Contact us</h2>
         <p>
-          Pour nous contacter pour la création d'une application web et/ou
-          mobile, envoyez un mail à l'adresse{" "}
-          <a href="mailto:jazoulay@joazco.com">jazoulay@joazco.com</a> en
-          indiquant le sujet dans l'objet du mail.
+          To contact us about building a web and/or mobile application, send an
+          email to <a href="mailto:jazoulay@joazco.com">jazoulay@joazco.com</a>{" "}
+          and include the subject in your email title.
         </p>
         {/* <div data-aos="flip-left">
           <form id="formContact">
@@ -32,8 +31,8 @@ const ContactForm = () => {
                   <i className="fas fa-check"></i>
                 </div>
                 <p>
-                  Votre message a bien été envoyé et reçu, vous aurez un retour
-                  d'ici peu.
+                  Your message has been sent and received. We will get back to
+                  you shortly.
                 </p>
               </div>
             )}
@@ -44,7 +43,7 @@ const ContactForm = () => {
                 type="email"
                 id="email-input"
                 required
-                placeholder="nom@domain.com"
+                placeholder="name@domain.com"
                 value={emailInput}
                 onChange={(e) => setEmailInput(e.target.value)}
               />
@@ -56,9 +55,10 @@ const ContactForm = () => {
                 value={subjectInput}
                 onChange={(e) => setSubjectInput(e.target.value)}
               >
-                <option value="Projet web">Projet web</option>
-                <option value="Projet mobile">Projet mobile</option>
-                <option value="autre">autre</option>
+                <option value="Web project">Web project</option>
+                <option value="Web project">Web project</option>
+                <option value="Mobile project">Mobile project</option>
+                <option value="other">other</option>
               </select>
             </div>
             <div className="form-field">
@@ -76,7 +76,7 @@ const ContactForm = () => {
                 id="btn-submit"
                 onClick={(e) => handleSubmit(e)}
               >
-                Envoyer <i className="far fa-paper-plane"></i>
+                Send <i className="far fa-paper-plane"></i>
               </button>
             </div>
           </form>

@@ -17,7 +17,7 @@ const Head = () => {
       <title>Joazco</title>
       <meta
         name="description"
-        content="Née de la passion et de l’expertise de Jordan Azoulay, l’entreprise Joazco vous offre ses talents pour concrétiser vos projets de sites web et d’applications mobiles."
+        content="Born from Jordan Azoulay's passion and expertise, Joazco brings its skills to life for your web and mobile app projects."
       />
       <meta name="keywords" content="" />
       <meta name="author" content="https://joazco.com" />
@@ -27,7 +27,7 @@ const Head = () => {
       <meta property="og:url" content="https://joazco.com/" />
       <meta
         property="og:description"
-        content="Née de la passion et de l’expertise de Jordan Azoulay, l’entreprise Joazco vous offre ses talents pour concrétiser vos projets de sites web et d’applications mobiles."
+        content="Born from Jordan Azoulay's passion and expertise, Joazco brings its skills to life for your web and mobile app projects."
       />
       <meta name="robots" content="all" />
       <meta name="copyright" content="Copyright © 2021 joazco.com" />

@@ -11,7 +11,7 @@ const Bloc1 = () => {
         </div>
         <article>
           <h1>Joazco</h1>
-          <p>Concrétisez vos projets web et mobile grâce à notre expertise.</p>
+          <p>Bring your web and mobile projects to life with our expertise.</p>
         </article>
       </section>
   )

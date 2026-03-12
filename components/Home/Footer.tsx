@@ -9,7 +9,7 @@ const Footer = () => {
           <i className="fab fa-linkedin"></i> Linkedin
         </a>
       </div>
-      <div>Joazco.com n'utilise aucun cookie</div>
+      <div>Joazco.com does not use any cookies</div>
     </footer>
   );
 };

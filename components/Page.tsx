@@ -14,9 +14,11 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_APP_ID,
 };
 export const app = initializeApp(firebaseConfig);
+console.log("🚀 ~ app:", app);
 
 export const db = getFirestore(app);
 export const auth = getAuth(app);
+console.log("🚀 ~ auth:", auth);
 
 export const fetchProjects = async () => {
   const onfulfilled = await getDocs(query(collection(db, "projects")));
