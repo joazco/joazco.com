@@ -5,33 +5,37 @@ import { useAOS } from "../scripts";
 
 const Head = () => {
   const initScroll = useAOS();
+  const pageUrl = "https://joazco.com/darkbluedungeon";
+  const title = "Dark Blue Dungeon | Text-Based Turn-Based RPG";
+  const description =
+    "Dark Blue Dungeon is a thrilling text-based RPG. Embark on a dangerous quest, face combats, solve riddles, and overcome mini-games with strategy and thinking.";
+  const ogImage =
+    "https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/logo.png?alt=media";
 
   useEffect(() => {
     initScroll();
   }, []);
   return (
     <HeadNext>
-      <title>Dark Blue Dungeon | Text-Based Turn-Based RPG</title>
-      <meta
-        name="description"
-        content="Dark Blue Dungeon is a thrilling text-based RPG. Embark on a dangerous quest, face combats, solve riddles, and overcome mini-games with strategy and thinking."
-      />
+      <title>{title}</title>
+      <meta name="description" content={description} />
       <meta
         name="keywords"
         content="Dark Blue Dungeon, RPG, text-based RPG, turn-based combat, mobile RPG, strategy game, adventure game"
       />
       <meta name="author" content="https://joazco.com" />
-      <meta property="og:title" content="Dark Blue Dungeon" />
-      <meta
-        property="og:description"
-        content="Dark Blue Dungeon is a thrilling text-based RPG. Embark on a dangerous quest, face combats, solve riddles, and overcome mini-games with strategy and thinking."
-      />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://joazco.com/" />
-      <meta
-        property="og:image"
-        content="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/logo.png?alt=media"
-      />
+      <meta property="og:url" content={pageUrl} />
+      <meta property="og:image" content={ogImage} />
+      <meta property="og:site_name" content="Joazco" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={ogImage} />
+      <meta name="robots" content="index, follow, max-image-preview:large" />
+      <link rel="canonical" href={pageUrl} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="theme-color" content="#00468b" />
       <link
@@ -44,6 +48,25 @@ const Head = () => {
       />
       <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
       <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "VideoGame",
+            name: "Dark Blue Dungeon",
+            description,
+            url: pageUrl,
+            genre: ["RPG", "Turn-Based", "Adventure"],
+            operatingSystem: ["Android", "iOS", "Windows"],
+            publisher: {
+              "@type": "Organization",
+              name: "Joazco",
+              url: "https://joazco.com",
+            },
+          }),
+        }}
+      />
     </HeadNext>
   );
 };
@@ -56,6 +79,16 @@ const DarkBlueDungeon = () => {
     return () => {
       document.body.classList.remove("darkbluedungeon-page");
     };
+  }, []);
+
+  useEffect(() => {
+    const onEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setTrailerOpen(false);
+      }
+    };
+    document.addEventListener("keydown", onEscape);
+    return () => document.removeEventListener("keydown", onEscape);
   }, []);
 
   return (
@@ -82,6 +115,7 @@ const DarkBlueDungeon = () => {
                 data-aos-duration="1000"
                 href="#dbd-download"
                 className="dbd-btn dbd-btn-white"
+                aria-label="Go to download section"
               >
                 Download
               </a>
@@ -90,6 +124,7 @@ const DarkBlueDungeon = () => {
                 data-aos-duration="1000"
                 onClick={() => setTrailerOpen(true)}
                 className="dbd-btn"
+                aria-label="Open trailer modal"
               >
                 Watch Trailer
               </button>{" "}
@@ -122,11 +157,15 @@ const DarkBlueDungeon = () => {
           <div className="modal-overlay" onClick={() => setTrailerOpen(false)}>
             <div
               className="modal-content"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Dark Blue Dungeon trailer"
               onClick={(e) => e.stopPropagation()} // empêche de fermer en cliquant dans la vidéo
             >
               <button
                 className="modal-close"
                 onClick={() => setTrailerOpen(false)}
+                aria-label="Close trailer modal"
               >
                 ✕
               </button>
@@ -190,6 +229,7 @@ const DarkBlueDungeon = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://apps.apple.com/au/app/dark-blue-dungeon/id1604755796"
+                aria-label="Download Dark Blue Dungeon on App Store"
               >
                 <img
                   src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FAPP%20STORE%20button.png?alt=media&token=49e96624-ebdf-4891-95c8-3f67b2fb4512"
@@ -200,6 +240,7 @@ const DarkBlueDungeon = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://play.google.com/store/apps/details?id=com.joazco.darkbluedonjon&hl=fr"
+                aria-label="Download Dark Blue Dungeon on Google Play"
               >
                 <img
                   src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FGOOGLE%20PLAY%20button.png?alt=media&token=a85bc237-797a-4535-a3b2-8f28c5d9186f"
@@ -221,6 +262,8 @@ const DarkBlueDungeon = () => {
                 <a
                   href="https://store.steampowered.com/app/3119460/Dark_Blue_Dungeon/"
                   target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View Dark Blue Dungeon on Steam"
                 >
                   <img
                     src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FSTEAM%20button.png?alt=media&token=c8070be8-82c3-4f5e-be29-84e019eaa006"
@@ -261,6 +304,7 @@ const DarkBlueDungeon = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://play.google.com/store/apps/details?id=com.joazco.darkbluedonjon&hl=fr"
+                  aria-label="Download Dark Blue Dungeon on Google Play"
                 >
                   <img
                     src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FGOOGLE%20PLAY%20button.png?alt=media&token=a85bc237-797a-4535-a3b2-8f28c5d9186f"
@@ -271,6 +315,7 @@ const DarkBlueDungeon = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://apps.apple.com/au/app/dark-blue-dungeon/id1604755796"
+                  aria-label="Download Dark Blue Dungeon on App Store"
                 >
                   <img
                     src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FAPP%20STORE%20button.png?alt=media&token=49e96624-ebdf-4891-95c8-3f67b2fb4512"
@@ -281,6 +326,7 @@ const DarkBlueDungeon = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://store.steampowered.com/app/3119460/Dark_Blue_Dungeon/"
+                  aria-label="View Dark Blue Dungeon on Steam"
                 >
                   <img
                     src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FSTEAM%20button.png?alt=media&token=c8070be8-82c3-4f5e-be29-84e019eaa006"
@@ -292,9 +338,7 @@ const DarkBlueDungeon = () => {
 
             {/* TERMS */}
             <div className="dbd-terms" id="confidentiality">
-              <p>
-                <a href="#confidentiality">Commitment of confidentiality</a>
-              </p>
+              <h2>Commitment of confidentiality</h2>
               <p>
                 The Dark Blue Dungeon application does not itself store or
                 collect any personal data. However, the application uses Google
@@ -302,7 +346,11 @@ const DarkBlueDungeon = () => {
                 certain information from your device (such as advertising ID or
                 IP address) to display ads. For more information on how AdMob
                 processes data, please consult
-                <a href="https://policies.google.com/privacy">
+                <a
+                  href="https://policies.google.com/privacy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {" "}
                   Google’s Privacy Policy
                 </a>
@@ -326,6 +374,7 @@ const DarkBlueDungeon = () => {
               target="_blank"
               rel="noopener noreferrer"
               href="https://discord.gg/H8b36mdzgn"
+              aria-label="Join Dark Blue Dungeon on Discord"
             >
               <img
                 src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2Fdiscord.png?alt=media&token=47ea2ee0-cf97-4f62-9702-b97a4ec9bd47"
@@ -336,6 +385,7 @@ const DarkBlueDungeon = () => {
               target="_blank"
               rel="noopener noreferrer"
               href="https://x.com/DarkblueDungeon"
+              aria-label="Follow Dark Blue Dungeon on X"
             >
               <img
                 src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2Fx.png?alt=media&token=bb180ab8-196b-4875-bb42-cb0e88f13d83"
@@ -346,6 +396,7 @@ const DarkBlueDungeon = () => {
               target="_blank"
               rel="noopener noreferrer"
               href="https://open.spotify.com/intl-fr/artist/3kW59ZhiqZDr482PHNJbAh"
+              aria-label="Listen to Dark Blue Dungeon on Spotify"
             >
               <img
                 src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2Fspotify.png?alt=media&token=1d2127b0-e15f-443f-bfb7-69871a480dae"
