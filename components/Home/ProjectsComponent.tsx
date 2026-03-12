@@ -6,8 +6,8 @@ type ProjectsComponentProps = {
 };
 
 const ProjectsComponent = ({ projects }: ProjectsComponentProps) => {
-  const _projects = useMemo(() => {
-    return projects.sort((a, b) => {
+  const sortedProjects = useMemo(() => {
+    return [...projects].sort((a, b) => {
       if (a.order > b.order) {
         return 1;
       }
@@ -22,36 +22,37 @@ const ProjectsComponent = ({ projects }: ProjectsComponentProps) => {
   return (
     <section className="joazco--block-3" id="projects">
       <article>
-        <h2>Our projects</h2>
+        <p className="section-tag">Projects</p>
+        <h2>Concrete projects built to last</h2>
+        <p className="section-intro">
+          A selection of deliverables focused on performance, user experience,
+          and business impact.
+        </p>
+
         <div className="joazco--block-3-content" data-aos="fade-up">
-          {_projects.map((project) => (
-            <div
+          {sortedProjects.map((project) => (
+            <article
               key={`project-${project.order}`}
               className="joazco--block-3-content-project"
             >
               <a
                 href={project.link}
-                className="project-flip-card"
+                className="project-card"
                 aria-label={`Open project ${project.title}`}
               >
-                <div className="project-flip-card-inner">
-                  <div className="project-flip-card-face project-flip-card-front">
-                    <img src={project.image} alt={`Project image: ${project.title}`} />
-                    <div className="project-flip-card-front-overlay">
-                      <h3>{project.title}</h3>
-                      <span>{project.link.replace(/(^\w+:|^)\/\//, "")}</span>
-                    </div>
-                  </div>
-                  <div className="project-flip-card-face project-flip-card-back">
-                    <h3>{project.title}</h3>
-                    <p dangerouslySetInnerHTML={{ __html: project.content }}></p>
-                    <span className="project-flip-card-cta">
-                      Visit project <i className="fas fa-external-link-alt"></i>
-                    </span>
-                  </div>
+                <div className="project-card-media">
+                  <img src={project.image} alt={`Preview of project ${project.title}`} />
+                </div>
+                <div className="project-card-body">
+                  <h3>{project.title}</h3>
+                  <p dangerouslySetInnerHTML={{ __html: project.content }}></p>
+                  <span className="project-card-cta">
+                    View project
+                    <i className="fas fa-up-right-from-square"></i>
+                  </span>
                 </div>
               </a>
-            </div>
+            </article>
           ))}
         </div>
       </article>

@@ -3,89 +3,50 @@ import React from "react";
 const Bloc2 = () => {
   return (
     <section className="joazco--block-2" id="who">
-      <div className="joazco--block-2-header">
-        <h2>Who are we?</h2>
-      </div>
-      <div>
-        <p>
-          Born from Jordan Azoulay&apos;s passion and expertise, Joazco brings
-          its know-how to make your web and mobile app projects a reality.
-          <br />
-          French developer based in the South of France (PACA), building web,
-          mobile, and video game experiences with a focus on quality.
-          <br />
-          Close to our clients, we support and advise you throughout your
-          project&apos;s development. Up to date with the latest technologies,
-          Joazco helps you build mobile apps across different platforms with
-          controlled costs.
+      <div className="joazco--block-2-header" data-aos="fade-up">
+        <p className="section-tag">Expertise</p>
+        <h2>A pragmatic approach focused on results</h2>
+        <p className="section-intro">
+          Every project starts with a clear understanding of your needs,
+          followed by a structured execution plan. You move forward with solid
+          technical direction, justified decisions, and a product built to
+          evolve.
         </p>
       </div>
-      <div className="joazco--block-2-content" data-aos="zoom-in">
-        <div>
+
+      <div className="joazco--block-2-content" data-aos="fade-up">
+        <article className="service-card">
           <h3>Web development</h3>
           <p>
-            Expert in front-end, back-end, web hosting and serverless
-            technologies, Joazco supports you at every stage of your website
-            project.
-            <br />
-            Benefit from the web technologies best suited to your market and
-            your goals. Whatever your web project, Joazco makes it happen.
+            Corporate websites, business interfaces, custom platforms, APIs,
+            and high-performance architecture built for SEO and conversion.
           </p>
-        </div>
-        <div className="joazco--block-2-content-img" data-aos="zoom-in">
-          <img
-            src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/images%2Fbrowser.png?alt=media&token=024482f8-8dd4-4bcf-8444-509d35947005"
-            alt="browser icon"
-          />
-        </div>
-        <div className="joazco--block-2-content-2" data-aos="zoom-in">
-          <h3>Mobile app development</h3>
+          <span>Front-end, Back-end, Serverless</span>
+        </article>
+
+        <article className="service-card">
+          <h3>Mobile applications</h3>
           <p>
-            Bring your mobile projects to life with our expertise.
-            <br />
-            Thanks to hybrid technologies and PWAs, we build your Android and
-            iOS mobile applications at lower cost while preserving the quality
-            guaranteed by Joazco&apos;s experience.
+            Reliable Android/iOS apps with UX designed for real-world usage and
+            controlled maintenance costs.
           </p>
-        </div>
-        <div
-          className="joazco--block-2-content-2 joazco--block-2-content-img"
-          data-aos="zoom-in"
-        >
-          <img
-            src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/images%2Fmobile-app.png?alt=media&token=47f4bba9-e637-4fe8-a5e4-ccb1c98802ed"
-            alt="mobile icon"
-          />
-        </div>
-        <div className="joazco--block-2-content-2" data-aos="zoom-in">
-          <h3>Video game development</h3>
+          <span>Hybrid, PWA, store publishing</span>
+        </article>
+
+        <article className="service-card">
+          <h3>Video games</h3>
           <p>
-            We also design and build video game experiences, from concept to
-            production-ready gameplay.
-            <br />
-            Whether it is a narrative game, a combat-focused prototype, or a
-            feature-rich mobile game, we help you shape mechanics, UX and
-            performance to deliver a polished final product.
+            Gameplay design, fast prototyping, interactive storytelling, and
+            technical optimization for a polished final result.
           </p>
-        </div>
-        <div
-          className="joazco--block-2-content-2 joazco--block-2-content-img"
-          data-aos="zoom-in"
-        >
-          <img
-            src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Comic%20Space%20Game%2FComic%20Space%20Game%20home.png?alt=media&token=c229c3d3-8d51-4bd4-9147-eca8b1b42fc7"
-            alt="video game illustration"
-            style={{ borderRadius: "10px" }}
-          />
-        </div>
+          <span>Prototype, gameplay, iterations</span>
+        </article>
       </div>
-      <div>
-        <br />
-        <p>
-          Browse our projects to learn more about our work. Contact us to share
-          your ideas and get an estimate.
-        </p>
-      </div>
+
+      <p className="joazco--block-2-outro" data-aos="fade-up">
+        One technical point of contact to scope, build, and continuously
+        improve your product quality.
+      </p>
     </section>
   );
 };
