@@ -72,6 +72,7 @@ const Bloc2 = () => {
           <img
             src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Comic%20Space%20Game%2FComic%20Space%20Game%20home.png?alt=media&token=c229c3d3-8d51-4bd4-9147-eca8b1b42fc7"
             alt="video game illustration"
+            style={{ borderRadius: "10px" }}
           />
         </div>
       </div>
