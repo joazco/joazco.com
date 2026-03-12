@@ -11,6 +11,9 @@ const Bloc2 = () => {
           Born from Jordan Azoulay&apos;s passion and expertise, Joazco brings
           its know-how to make your web and mobile app projects a reality.
           <br />
+          French developer based in the South of France (PACA), building web,
+          mobile, and video game experiences with a focus on quality.
+          <br />
           Close to our clients, we support and advise you throughout your
           project&apos;s development. Up to date with the latest technologies,
           Joazco helps you build mobile apps across different platforms with
