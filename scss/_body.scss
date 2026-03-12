@@ -1,113 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap");
+
 :root {
-  --color-primary: #34495e;
-  --color-primary-rgb: 52, 73, 94;
-  --color-primary-contrast: #ffffff;
-  --color-primary-contrast-rgb: 255, 255, 255;
-  --color-primary-shade: #2e4053;
-  --color-primary-tint: #485b6e;
-
-  --color-secondary: #f8c471;
-  --color-secondary-rgb: 248, 196, 113;
-  --color-secondary-contrast: #000000;
-  --color-secondary-contrast-rgb: 0, 0, 0;
-  --color-secondary-shade: #daac63;
-  --color-secondary-tint: #f9ca7f;
-
-  --color-tertiary: #5260ff;
-  --color-tertiary-rgb: 82, 96, 255;
-  --color-tertiary-contrast: #ffffff;
-  --color-tertiary-contrast-rgb: 255, 255, 255;
-  --color-tertiary-shade: #4854e0;
-  --color-tertiary-tint: #6370ff;
-
-  --color-success: #2dd36f;
-  --color-success-rgb: 45, 211, 111;
-  --color-success-contrast: #000000;
-  --color-success-contrast-rgb: 0, 0, 0;
-  --color-success-shade: #28ba62;
-  --color-success-tint: #42d77d;
-
-  --color-warning: #ffc409;
-  --color-warning-rgb: 255, 196, 9;
-  --color-warning-contrast: #000000;
-  --color-warning-contrast-rgb: 0, 0, 0;
-  --color-warning-shade: #e0ac08;
-  --color-warning-tint: #ffca22;
-
-  --color-danger: #eb445a;
-  --color-danger-rgb: 235, 68, 90;
-  --color-danger-contrast: #ffffff;
-  --color-danger-contrast-rgb: 255, 255, 255;
-  --color-danger-shade: #cf3c4f;
-  --color-danger-tint: #ed576b;
-
-  --color-dark: #222428;
-  --color-dark-rgb: 34, 36, 40;
-  --color-dark-contrast: #ffffff;
-  --color-dark-contrast-rgb: 255, 255, 255;
-  --color-dark-shade: #1e2023;
-  --color-dark-tint: #383a3e;
-
-  --color-medium: #92949c;
-  --color-medium-rgb: 146, 148, 156;
-  --color-medium-contrast: #ffffff;
-  --color-medium-contrast-rgb: 255, 255, 255;
-  --color-medium-shade: #808289;
-  --color-medium-tint: #9d9fa6;
-
-  --color-light: #f4f5f8;
-  --color-light-rgb: 244, 245, 248;
-  --color-light-contrast: #000000;
-  --color-light-contrast-rgb: 0, 0, 0;
-  --color-light-shade: #d7d8da;
-  --color-light-tint: #f5f6f9;
+  --color-primary: #ffffff;
+  --color-primary-rgb: 255, 255, 255;
+  --color-secondary: #ffb703;
+  --color-secondary-rgb: 255, 183, 3;
+  --color-tertiary: #219ebc;
+  --color-tertiary-rgb: 33, 158, 188;
+  --color-dark: #0b1324;
+  --color-dark-rgb: 11, 19, 36;
+  --color-medium: #4f5d75;
+  --color-medium-rgb: 79, 93, 117;
+  --color-light: #f4f7fb;
+  --color-light-rgb: 244, 247, 251;
 }
 
 body {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 1.1rem;
-  font: 62.5%/1.5 "Lucida Grande", "Lucida Sans", Tahoma, Verdana, sans-serif;
-  background: var(--color-light);
+  font-family: "Manrope", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  background: linear-gradient(180deg, #ffffff 0%, #f4f7fb 100%);
   color: var(--color-dark);
   display: flex;
   flex-direction: column;
   flex: 1;
   position: relative;
-
-  li {
-    transition: all 0.35s ease;
-    cursor: pointer;
-    position: relative;
-
-    &::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      background-color: white;
-      visibility: hidden;
-      -webkit-transform: scaleX(0);
-      transform: scaleX(0);
-      -webkit-transition: all 0.3s ease-in-out 0s;
-      transition: all 0.3s ease-in-out 0s;
-    }
-
-    &:hover {
-      &::before {
-        visibility: visible;
-        -webkit-transform: scaleX(1);
-        transform: scaleX(1);
-      }
-    }
-  }
 }
 
 *:focus-visible {
-  outline: 2px solid var(--color-secondary);
+  outline: 2px solid var(--color-tertiary);
   outline-offset: 2px;
 }
 
@@ -115,12 +39,12 @@ body {
   position: absolute;
   left: 8px;
   top: -40px;
-  background: var(--color-secondary);
-  color: var(--color-dark);
+  background: var(--color-dark);
+  color: #fff;
   padding: 8px 12px;
   z-index: 1000;
   border-radius: 6px;
-  font-size: 1rem;
+  font-size: 0.95rem;
   text-decoration: none;
   transition: top 0.2s ease;
   &:focus {
@@ -133,19 +57,52 @@ header {
   left: 0;
   right: 0;
 }
+
 main {
   height: 100%;
 }
 
-h1 {
-  font-size: 2rem;
-}
-h2 {
-  font-size: 1.8rem;
-}
+h1,
+h2,
 h3 {
-  font-size: 1.6rem;
+  font-family: "Fraunces", serif;
+  color: var(--color-dark);
+  margin-top: 0;
 }
+
+h1 {
+  font-size: clamp(2.1rem, 5vw, 4rem);
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+}
+
 img {
   max-width: 100%;
+}
+
+.section-tag {
+  display: inline-flex;
+  border: 1px solid rgba(var(--color-dark-rgb), 0.15);
+  border-radius: 999px;
+  padding: 5px 12px;
+  font-size: 0.78rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: rgba(var(--color-dark-rgb), 0.78);
+  margin-bottom: 10px;
+}
+
+.section-intro {
+  max-width: 760px;
+  margin: 0 auto;
+  color: rgba(var(--color-dark-rgb), 0.78);
+  font-size: 1.04rem;
 }

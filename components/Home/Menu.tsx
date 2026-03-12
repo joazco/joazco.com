@@ -12,8 +12,8 @@ const Menu = () => {
         >
           <div>
             <img
-              src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/images%2Fjoazco_logo_blank_72x72.png?alt=media&token=00e5c472-469e-4683-8653-9205d0417fe5"
-              alt="Joazco logo"
+              src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/favicon.svg?alt=media&token=8254d33e-4665-45c5-8f5d-1a3fa9eb9675"
+              alt="Logo Joazco"
             />
           </div>
           <div>JOAZCO</div>
@@ -22,17 +22,17 @@ const Menu = () => {
           <ul id="joazco--header-navbar-right-links">
             <li>
               <button type="button" data-target="who">
-                Who are we?
+                Expertise
               </button>
             </li>
             <li>
               <button type="button" data-target="projects">
-                Our projects
+                Projects
               </button>
             </li>
             <li>
               <button type="button" data-target="contact">
-                Contact us
+                Contact
               </button>
             </li>
           </ul>
