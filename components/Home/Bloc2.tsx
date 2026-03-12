@@ -4,31 +4,29 @@ const Bloc2 = () => {
   return (
     <section className="joazco--block-2" id="who">
       <div className="joazco--block-2-header">
-        <h2>Qui sommes-nous?</h2>
+        <h2>Who are we?</h2>
       </div>
       <div>
         <p>
-          Née de la passion et de l’expertise de Jordan Azoulay, l’entreprise
-          Joazco vous offre ses talents pour concrétiser vos projets de sites
-          web et d’applications mobiles.
+          Born from Jordan Azoulay&apos;s passion and expertise, Joazco brings
+          its know-how to make your web and mobile app projects a reality.
           <br />
-          Proche de nos clients, nous vous accompagnons et conseillons tout au
-          long du développement de votre projet. Au fait des dernières
-          technologies, Joazco vous permet de créer une application mobile sur
-          les différentes plateformes à coûts réduits.
+          Close to our clients, we support and advise you throughout your
+          project&apos;s development. Up to date with the latest technologies,
+          Joazco helps you build mobile apps across different platforms with
+          controlled costs.
         </p>
       </div>
       <div className="joazco--block-2-content" data-aos="zoom-in">
         <div>
-          <h3>Créateur de sites web</h3>
+          <h3>Web development</h3>
           <p>
-            Expert dans les domaines du front end, du back end, de l’hébergement
-            de sites web et du serverless, Joazco vous accompagne tout au long
-            de votre projet de création de site web.
+            Expert in front-end, back-end, web hosting and serverless
+            technologies, Joazco supports you at every stage of your website
+            project.
             <br />
-            Bénéficiez des technologies web les plus adaptées à votre marché, à
-            votre demande. Quels que soient vos projets web, Joazco les
-            concrétisent.
+            Benefit from the web technologies best suited to your market and
+            your goals. Whatever your web project, Joazco makes it happen.
           </p>
         </div>
         <div className="joazco--block-2-content-img" data-aos="zoom-in">
@@ -38,13 +36,13 @@ const Bloc2 = () => {
           />
         </div>
         <div className="joazco--block-2-content-2" data-aos="zoom-in">
-          <h3>Créateur d'application mobile</h3>
+          <h3>Mobile app development</h3>
           <p>
-            Donnez vie à vos projets mobile avec notre expertise.
+            Bring your mobile projects to life with our expertise.
             <br />
-            Grâce aux technologies hybrides et PWA, nous développons vos
-            applications mobiles Androïd et Ios à moindre coût tout en
-            conservant la qualité garantie par l’expérience de Joazco.
+            Thanks to hybrid technologies and PWAs, we build your Android and
+            iOS mobile applications at lower cost while preserving the quality
+            guaranteed by Joazco&apos;s experience.
           </p>
         </div>
         <div
@@ -56,12 +54,33 @@ const Bloc2 = () => {
             alt="mobile icon"
           />
         </div>
+        <div className="joazco--block-2-content-2" data-aos="zoom-in">
+          <h3>Video game development</h3>
+          <p>
+            We also design and build video game experiences, from concept to
+            production-ready gameplay.
+            <br />
+            Whether it is a narrative game, a combat-focused prototype, or a
+            feature-rich mobile game, we help you shape mechanics, UX and
+            performance to deliver a polished final product.
+          </p>
+        </div>
+        <div
+          className="joazco--block-2-content-2 joazco--block-2-content-img"
+          data-aos="zoom-in"
+        >
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Comic%20Space%20Game%2FComic%20Space%20Game%20home.png?alt=media&token=c229c3d3-8d51-4bd4-9147-eca8b1b42fc7"
+            alt="video game illustration"
+            style={{ borderRadius: "10px" }}
+          />
+        </div>
       </div>
       <div>
         <br />
         <p>
-          Parcourez nos projets pour en savoir plus sur nos réalisations.
-          Contactez-nous pour nous présenter vos projets et les estimer.
+          Browse our projects to learn more about our work. Contact us to share
+          your ideas and get an estimate.
         </p>
       </div>
     </section>

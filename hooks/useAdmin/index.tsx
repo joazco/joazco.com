@@ -17,9 +17,9 @@ const useAdmin = () => {
   const [projectEdit, setProjectEdit] = useState<Project | undefined>();
 
   const logIn = (emailInput: string, passwordInput: string) => {
-    signInWithEmailAndPassword(auth, emailInput, passwordInput).catch(
-      (err) => {}
-    );
+    signInWithEmailAndPassword(auth, emailInput, passwordInput).catch((err) => {
+      console.log("🚀 ~ logIn ~ err:", err);
+    });
   };
 
   const logOut = () => {
@@ -61,7 +61,7 @@ const useAdmin = () => {
             }
 
             return 0;
-          })
+          }),
         );
       });
     }

@@ -7,7 +7,7 @@ declare const $: any;
 
 const useScroll = () => {
   const initVars = useCallback(() => {
-    const $menuLinks = $("#joazco--header-navbar-right-links li");
+    const $menuLinks = $("#joazco--header-navbar-right-links [data-target]");
     const $header = $(".joazco--header");
     return { $menuLinks, $header };
   }, []);
@@ -29,6 +29,12 @@ const useScroll = () => {
     });
     $(".joazco--header-navbar-left").click(() => {
       scrollTo(0);
+    });
+    $(".joazco--header-navbar-left").keydown((e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        scrollTo(0);
+      }
     });
     AOS.init();
   }, []);

@@ -6,12 +6,12 @@ const Bloc1 = () => {
         <div>
           <img
             src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/images%2Fprincipal_img.jpg?alt=media&token=33973961-cf43-4f25-8fce-50ac29ee90dd"
-            alt=""
+            alt="Web and mobile development showcase"
           />
         </div>
         <article>
           <h1>Joazco</h1>
-          <p>Concrétisez vos projets web et mobile grâce à notre expertise.</p>
+          <p>Bring your web and mobile projects to life with our expertise.</p>
         </article>
       </section>
   )

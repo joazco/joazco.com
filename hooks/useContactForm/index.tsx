@@ -2,7 +2,7 @@ import { useState, FormEvent, useEffect, useMemo } from "react";
 
 const useContactForm = () => {
   const [emailInput, setEmailInput] = useState<string>("");
-  const [subjectInput, setSubjectInput] = useState<string>("Projet web");
+  const [subjectInput, setSubjectInput] = useState<string>("Web project");
   const [informationInput, setInformationInput] = useState<string>("");
   const [blockForm, setBlockForm] = useState<boolean>(false);
   const showAlert = useMemo(() => {
@@ -33,7 +33,7 @@ const useContactForm = () => {
       setBlockForm(true);
     } else {
       setEmailInput("");
-      setSubjectInput("Projet web");
+      setSubjectInput("Web project");
       setInformationInput("");
     }
   }, []);

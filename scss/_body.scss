@@ -106,6 +106,28 @@ body {
   }
 }
 
+*:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 8px;
+  top: -40px;
+  background: var(--color-secondary);
+  color: var(--color-dark);
+  padding: 8px 12px;
+  z-index: 1000;
+  border-radius: 6px;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: top 0.2s ease;
+  &:focus {
+    top: 8px;
+  }
+}
+
 header {
   position: fixed;
   left: 0;

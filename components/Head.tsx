@@ -6,6 +6,10 @@ import useScroll from "../scripts/useScroll";
 const Head = () => {
   const initHeader = useHeader();
   const initScroll = useScroll();
+  const siteUrl = "https://joazco.com/";
+  const title = "Joazco | Web, Mobile and Video Game Development";
+  const description =
+    "Born from Jordan Azoulay's passion and expertise, Joazco brings its skills to life for your web, mobile, and video game projects.";
 
   useEffect(() => {
     initHeader();
@@ -14,22 +18,29 @@ const Head = () => {
 
   return (
     <HeadNext>
-      <title>Joazco</title>
+      <title>{title}</title>
+      <meta name="description" content={description} />
       <meta
-        name="description"
-        content="Née de la passion et de l’expertise de Jordan Azoulay, l’entreprise Joazco vous offre ses talents pour concrétiser vos projets de sites web et d’applications mobiles."
+        name="keywords"
+        content="web development, mobile app development, video game development, joazco"
       />
-      <meta name="keywords" content="" />
       <meta name="author" content="https://joazco.com" />
+      <link rel="canonical" href={siteUrl} />
 
-      <meta property="og:title" content="Joazco" />
+      <meta property="og:title" content={title} />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://joazco.com/" />
+      <meta property="og:url" content={siteUrl} />
+      <meta property="og:description" content={description} />
+      <meta property="og:site_name" content="Joazco" />
+      <meta property="og:locale" content="en_US" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
       <meta
-        property="og:description"
-        content="Née de la passion et de l’expertise de Jordan Azoulay, l’entreprise Joazco vous offre ses talents pour concrétiser vos projets de sites web et d’applications mobiles."
+        name="twitter:image"
+        content="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/logo.png?alt=media&token=1f8ac1c5-7a8e-41c6-a624-d3f0fcf01bef"
       />
-      <meta name="robots" content="all" />
+      <meta name="robots" content="index, follow, max-image-preview:large" />
       <meta name="copyright" content="Copyright © 2021 joazco.com" />
       <meta
         property="og:image"
@@ -56,9 +67,26 @@ const Head = () => {
       />
       <meta
         name="viewport"
-        content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        content="viewport-fit=cover, width=device-width, initial-scale=1"
       />
       <meta name="theme-color" content="#34495e" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Joazco",
+            url: siteUrl,
+            logo: "https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/logo.png?alt=media&token=1f8ac1c5-7a8e-41c6-a624-d3f0fcf01bef",
+            sameAs: [
+              "https://www.linkedin.com/in/jordan-azoulay/",
+              "https://x.com/Joazco",
+              "https://www.tiktok.com/@joazco_official",
+            ],
+          }),
+        }}
+      />
 
       <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
