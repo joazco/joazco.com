@@ -35,8 +35,11 @@ type PageProps = {
 const Page: React.FC<PageProps> = ({ children }) => {
   return (
     <>
+      <a className="skip-link" href="#main-content">
+        Skip to main content
+      </a>
       <Head />
-      <main>{children}</main>
+      <main id="main-content">{children}</main>
     </>
   );
 };

@@ -28,7 +28,7 @@ const useHeader = () => {
   }, []);
 
   const listenMenuResponsive = useCallback(() => {
-    $(".joazco--header-navbar-right-menu-responsive-content li").click(
+    $(".joazco--header-navbar-right-menu-responsive-content [data-target]").click(
       function () {
         const { $header } = initVars();
         const target = $(this).data("target");

@@ -29,10 +29,22 @@
           flex-grow: 1;
           margin-right: 20px;
           text-decoration: none;
+          button {
+            background: transparent;
+            border: none;
+            color: inherit;
+            font: inherit;
+            cursor: pointer;
+            padding: 0;
+          }
         }
       }
       .joazco--header-navbar-right-menu {
         display: none;
+        background: transparent;
+        border: none;
+        color: inherit;
+        cursor: pointer;
         i {
           cursor: pointer;
         }
@@ -56,6 +68,14 @@
         li {
           flex-basis: 100%;
           margin-bottom: 10px;
+          button {
+            background: transparent;
+            border: none;
+            color: inherit;
+            font: inherit;
+            text-align: left;
+            padding: 0;
+          }
         }
       }
     }
