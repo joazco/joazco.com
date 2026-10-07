@@ -45,7 +45,10 @@ const ProjectsComponent = ({ projects }: ProjectsComponentProps) => {
                 </div>
                 <div className="project-card-body">
                   <h3>{project.title}</h3>
-                  <p dangerouslySetInnerHTML={{ __html: project.content }}></p>
+                  <div
+                    className="project-card-content"
+                    dangerouslySetInnerHTML={{ __html: project.content }}
+                  ></div>
                   <span className="project-card-cta">
                     View project
                     <i className="fas fa-up-right-from-square"></i>
