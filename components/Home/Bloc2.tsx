@@ -1,52 +1,71 @@
 import React from "react";
+import Icon from "./Icon";
+
+const services = [
+  {
+    title: "Web development",
+    text: "Showcase websites, business platforms and custom interfaces. A web presence that truly serves your activity.",
+    tags: ["Front & back-end", "API & serverless", "SEO & performance"],
+  },
+  {
+    title: "Mobile applications",
+    text: "Experiences designed for mobile, from the prototype to publication on the Android and iOS stores.",
+    tags: ["Android & iOS", "Hybrid & PWA", "Publishing"],
+  },
+  {
+    title: "Games & experiences",
+    text: "Gameplay, interactive stories and prototypes that make you want to keep playing.",
+    tags: ["Game design", "Prototyping", "Optimization"],
+  },
+];
 
 const Bloc2 = () => {
   return (
-    <section className="joazco--block-2" id="who">
-      <div className="joazco--block-2-header" data-aos="fade-up">
-        <p className="section-tag">Expertise</p>
-        <h2>A pragmatic approach focused on results</h2>
-        <p className="section-intro">
-          Every project starts with a clear understanding of your needs,
-          followed by a structured execution plan. You move forward with solid
-          technical direction, justified decisions, and a product built to
-          evolve.
-        </p>
+    <section className="joazco--block-2" id="who" aria-labelledby="who-title">
+      <div className="wrap inner">
+        <div className="approach-copy">
+          <p className="eyebrow">02 / The approach</p>
+          <h2 id="who-title">
+            The right idea.
+            <br />
+            The right code.
+          </h2>
+          <p>
+            I’m Jordan, an independent developer based in the South of France (PACA). I turn your
+            ideas into digital products that are useful, fast and easy to grow.
+          </p>
+          <p>
+            From the first prototype to launch, I keep the same course: a clear experience and a
+            solid technical foundation.
+          </p>
+          <a href="#contact" className="text-link">
+            Let’s get to know each other <Icon name="arrow" />
+          </a>
+        </div>
+        <div className="services">
+          {services.map((service, i) => (
+            <details key={service.title} open={i === 0}>
+              <summary>
+                <span className="service-number" aria-hidden="true">
+                  0{i + 1}
+                </span>
+                <h3>{service.title}</h3>
+                <span className="plus" aria-hidden="true">
+                  +
+                </span>
+              </summary>
+              <div className="service-body">
+                <p>{service.text}</p>
+                <ul className="service-tags">
+                  {service.tags.map((tag) => (
+                    <li key={tag}>{tag}</li>
+                  ))}
+                </ul>
+              </div>
+            </details>
+          ))}
+        </div>
       </div>
-
-      <div className="joazco--block-2-content" data-aos="fade-up">
-        <article className="service-card">
-          <h3>Web development</h3>
-          <p>
-            Corporate websites, business interfaces, custom platforms, APIs,
-            and high-performance architecture built for SEO and conversion.
-          </p>
-          <span>Front-end, Back-end, Serverless</span>
-        </article>
-
-        <article className="service-card">
-          <h3>Mobile applications</h3>
-          <p>
-            Reliable Android/iOS apps with UX designed for real-world usage and
-            controlled maintenance costs.
-          </p>
-          <span>Hybrid, PWA, store publishing</span>
-        </article>
-
-        <article className="service-card">
-          <h3>Video games</h3>
-          <p>
-            Gameplay design, fast prototyping, interactive storytelling, and
-            technical optimization for a polished final result.
-          </p>
-          <span>Prototype, gameplay, iterations</span>
-        </article>
-      </div>
-
-      <p className="joazco--block-2-outro" data-aos="fade-up">
-        One technical point of contact to scope, build, and continuously
-        improve your product quality.
-      </p>
     </section>
   );
 };

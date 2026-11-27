@@ -6,8 +6,10 @@ import {
   Bloc2,
   Footer,
   ContactForm,
+  Universe,
 } from "../components";
 import { fetchProjects } from "../components/Page";
+import { useAccent } from "../hooks";
 import { Project } from "../types";
 
 type HomeProps = {
@@ -16,14 +18,20 @@ type HomeProps = {
 
 function Home(props: HomeProps) {
   const { projects } = props;
+  const { accent, changing, tick, paused, togglePaused } = useAccent();
+  const accentClass = changing ? `accent-word changing-${tick}` : "accent-word";
+
   return (
     <Page>
-      <Menu />
-      <Bloc1 />
-      <Bloc2 />
-      <ProjectsComponent projects={projects} />
-      <ContactForm />
-      <Footer />
+      <div className={`joazco--home${paused ? " no-motion" : ""}`} data-accent={accent}>
+        <Menu projectCount={projects.length} />
+        <Bloc1 projects={projects} accentClass={accentClass} />
+        <ProjectsComponent projects={projects} />
+        <Bloc2 />
+        <Universe />
+        <ContactForm accentClass={accentClass} />
+        <Footer paused={paused} onToggleMotion={togglePaused} />
+      </div>
     </Page>
   );
 }

@@ -1,39 +1,120 @@
-import React from "react";
+import React, { useState } from "react";
+import { Project } from "../../types";
+import Icon from "./Icon";
 
-const Bloc1 = () => {
+// The console shows one existing project per universe, matched by its link.
+const universes = [
+  { label: "Games", category: "Video game / RPG", link: "darkbluedungeon" },
+  { label: "Mobile", category: "Mobile / Interactive 3D", link: "v-sper" },
+  { label: "Web", category: "Web / Online tools", link: "hedgietools.com" },
+];
+
+type Bloc1Props = {
+  projects: Project[];
+  accentClass: string;
+};
+
+const Bloc1 = ({ projects, accentClass }: Bloc1Props) => {
+  const [active, setActive] = useState<number>(0);
+  const slides = universes
+    .map((universe) => ({
+      ...universe,
+      project: projects.find((project) => project.link.includes(universe.link)),
+    }))
+    .filter((slide) => slide.project);
+  const slide = slides[active];
+
   return (
-    <section className="joazco--block-1" id="top">
-      <div className="hero-grid" data-aos="fade-up">
-        <article className="hero-copy">
-          <p className="section-tag">Independent developer</p>
-          <h1>I build clear, fast, and durable digital products.</h1>
-          <p>
-            Based in the South of France (PACA), I help companies create
-            websites, mobile applications, and video game experiences. The goal
-            is simple: deliver efficient, maintainable, and elegant products.
+    <>
+      <section className="joazco--block-1 wrap" id="top" aria-labelledby="hero-title">
+        <div className="hero-copy">
+          <p className="eyebrow">
+            <span className="star" aria-hidden="true">
+              ✳
+            </span>{" "}
+            Independent developer · South of France
+          </p>
+          <h1 id="hero-title">
+            Code.
+            <br />
+            <span className={accentClass}>Play.</span>
+            <br />
+            Character.
+          </h1>
+          <p className="intro">
+            Websites, apps and games that move your ideas forward. Designed for people. Built
+            properly.
           </p>
           <div className="hero-actions">
-            <a href="#projects" className="hero-btn hero-btn-primary">
-              Explore my projects
+            <a href="#projects" className="button">
+              Explore the projects <Icon name="down" />
             </a>
-            <a href="#contact" className="hero-btn hero-btn-ghost">
-              Discuss your project
+            <a href="#contact" className="text-link">
+              Discuss your idea <Icon name="arrow" />
             </a>
           </div>
-        </article>
+        </div>
 
-        <aside className="hero-card" data-aos="fade-left">
-          <img
-            src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/images%2Fprincipal_img.jpg?alt=media&token=33973961-cf43-4f25-8fce-50ac29ee90dd"
-            alt="Preview of Joazco digital services"
-          />
-          <div className="hero-card-meta">
-            <strong>Joazco</strong>
-            <span>#Web, #Mobile, #GameDev</span>
+        {slide && (
+          <div className="hero-demo">
+            <div className="demo-caption" aria-hidden="true">
+              <span>The playground</span>
+              <span>
+                0{active + 1} / 0{slides.length}
+              </span>
+            </div>
+            <div className="console">
+              <div className="console-head" aria-hidden="true">
+                <span>
+                  <i /> JOAZCO.EXE
+                </span>
+                <span>− □ ×</span>
+              </div>
+              <div className="demo-display">
+                <img src={slide.project.image} alt={`Preview of ${slide.project.title}`} />
+                <div className="demo-overlay">
+                  <span>{slide.category}</span>
+                  <strong>{slide.project.title}</strong>
+                </div>
+              </div>
+              <div className="demo-tabs" role="group" aria-label="Explore Joazco’s universes">
+                {slides.map((item, i) => (
+                  <button
+                    key={item.label}
+                    type="button"
+                    aria-pressed={i === active}
+                    onClick={() => setActive(i)}
+                  >
+                    <span>0{i + 1}</span> {item.label}
+                  </button>
+                ))}
+              </div>
+              <div className="console-bottom" aria-hidden="true">
+                <span>One idea → one experience</span>
+                <div className="bands">
+                  <b />
+                  <b />
+                  <b />
+                  <b />
+                </div>
+              </div>
+            </div>
+            <p className="demo-note">Three universes. One curiosity.</p>
           </div>
-        </aside>
+        )}
+
+        <div className="hero-foot">
+          <span>Web / Mobile / Game dev</span>
+          <a href="#projects">Scroll down ↓</a>
+        </div>
+      </section>
+      <div className="rainbow-divider" aria-hidden="true">
+        <i />
+        <i />
+        <i />
+        <i />
       </div>
-    </section>
+    </>
   );
 };
 

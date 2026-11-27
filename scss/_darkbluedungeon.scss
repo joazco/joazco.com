@@ -107,6 +107,11 @@ html.darkbluedungeon-page {
       flex-direction: column;
     }
 
+    // The animation wrappers let each button stretch as it did without them.
+    > div {
+      display: grid;
+    }
+
     .dbd-btn {
       border: none;
       min-width: 250px;
@@ -265,11 +270,11 @@ cursor: pointer;
 }
     }
      &.nebe {
-      left: -10em;
-      top: 220em;
+      // In the page flow, after the text: it can never cover content at any width.
+      position: static;
+      display: block;
       width: 25%;
         @media (max-width: $bp-1440) {
-    left: -16em;
         width: 32%;
 }
     }
