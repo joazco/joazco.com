@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build && next export",
-    "start": "next start",
+    "dev": "NODE_OPTIONS=--require=./node-compat.js next dev",
+    "build": "NODE_OPTIONS=--require=./node-compat.js sh -c 'next build && next export'",
+    "start": "NODE_OPTIONS=--require=./node-compat.js next start",
     "lint": "next lint",
     "export": "next export"
   },

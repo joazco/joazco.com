@@ -110,24 +110,25 @@ const DarkBlueDungeon = () => {
               />
             </div>
             <div className="dbd-buttons">
-              <a
-                data-aos="fade-right"
-                data-aos-duration="1000"
-                href="#dbd-download"
-                className="dbd-btn dbd-btn-white"
-                aria-label="Go to download section"
-              >
-                Download
-              </a>
-              <button
-                data-aos="fade-left"
-                data-aos-duration="1000"
-                onClick={() => setTrailerOpen(true)}
-                className="dbd-btn"
-                aria-label="Open trailer modal"
-              >
-                Watch Trailer
-              </button>{" "}
+              {/* AOS sits on wrappers: the buttons force their own 0.3s transition for hover. */}
+              <div data-aos="fade-right" data-aos-duration="1000">
+                <a
+                  href="#dbd-download"
+                  className="dbd-btn dbd-btn-white"
+                  aria-label="Go to download section"
+                >
+                  Download
+                </a>
+              </div>
+              <div data-aos="fade-left" data-aos-duration="1000">
+                <button
+                  onClick={() => setTrailerOpen(true)}
+                  className="dbd-btn"
+                  aria-label="Open trailer modal"
+                >
+                  Watch Trailer
+                </button>
+              </div>
             </div>
           </div>
           <div className="dbd-about">
@@ -272,11 +273,6 @@ const DarkBlueDungeon = () => {
                 </a>
               </div>
             </div>
-            <img
-              className="dbd-gameplay-charac nebe"
-              src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FNEBE.gif?alt=media&token=e506d6ed-32ff-4fe8-a0af-0f998e2a7fc5"
-              alt="Nebe gif"
-            />
 
             {/* PLOT */}
             <div className="dbd-plot">
@@ -365,6 +361,11 @@ const DarkBlueDungeon = () => {
               </p>
             </div>
           </div>
+            <img
+              className="dbd-gameplay-charac nebe"
+              src="https://firebasestorage.googleapis.com/v0/b/joazco-1fd73.appspot.com/o/Dark%20Blue%20Dungeon%2FNEBE.gif?alt=media&token=e506d6ed-32ff-4fe8-a0af-0f998e2a7fc5"
+              alt="Nebe gif"
+            />
         </section>
 
         {/* FOOTER */}
