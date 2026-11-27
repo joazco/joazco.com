@@ -26,7 +26,7 @@ const channels = [
 const Universe = () => {
   return (
     <section className="joazco--universe wrap" id="universe" aria-labelledby="universe-title">
-      <p className="eyebrow">03 / My universe</p>
+      <p className="eyebrow">03 / News</p>
       <h2 id="universe-title">
         Gaming &amp; pop culture
         <br />
